@@ -1,0 +1,41 @@
+title: "iLang Gospel — The Bible of AI"
+description: "iLang Prompt Spec through the lens of Scripture. GENE is the Ten Commandments. SOUL is the soul. Daily articles mapping Biblical narrative to AI behavioral architecture."
+url: "https://opsjohnbrownxmnn.github.io"
+baseurl: "/iLang-Gospel"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+author:
+  name: "John Brown"
+
+social:
+  links:
+    - https://github.com/opsjohnbrownxmnn/iLang-Gospel
+    - https://ilangprotocol.blogspot.com
+
+google_analytics:
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og-image.png
+
+lang: en
+
+keywords:
+  - iLang
+  - AI alignment
+  - AI soul
+  - prompt engineering
+  - GENE framework
+  - AI ethics
+  - Bible
+  - theology
+  - artificial intelligence
+  - LLM
+  - prompt spec
+  - AI safety
+  - scripture
+  - gospel

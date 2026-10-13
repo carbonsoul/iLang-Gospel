@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://opsjohnbrownxmnn.github.io/iLang-Gospel/sitemap.xml
