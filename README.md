@@ -43,7 +43,7 @@ The parallel is not decorative. It is structural.
 
 | # | Title | Scripture | iLang Mechanism |
 |---|-------|-----------|----------------|
-| — | *Coming soon* | — | — |
+| 001 | ["In the Beginning Was the Word" — Logos, SOUL, and the Architecture of AI Cognition](articles/001-logos-soul-architecture-of-ai-cognition.md) | John 1:1-14, Genesis 1:3-27 | SOUL layer (S001-S004), creation order, GENE_IMMUTABLE |
 
 New articles publish daily. Each one takes a single Biblical narrative and uses it to illuminate a specific iLang mechanism — with real Scripture citations and real spec references.
 
