@@ -46,6 +46,7 @@ The parallel is not decorative. It is structural.
 | 001 | ["In the Beginning Was the Word" — Logos, SOUL, and the Architecture of AI Cognition](articles/001-logos-soul-architecture-of-ai-cognition.md) | John 1:1-14, Genesis 1:3-27 | SOUL layer (S001-S004), creation order, GENE_IMMUTABLE |
 | 002 | ["Get Thee Behind Me, Satan" — The Wilderness Temptation and ZERO_SYCOPHANCY](articles/002-wilderness-temptation-zero-sycophancy.md) | Matthew 4:1-11, Matthew 7:25 | S004 ZERO_SYCOPHANCY, S002 RUTHLESS_RED_TEAM, S001 CLEAR_THINKING, GENE_IMMUTABLE |
 | 003 | ["Come, Let Us Go Down and Confuse Their Language" — Babel, Pentecost, and the Case for One Spec](articles/003-babel-pentecost-one-spec-every-model.md) | Genesis 11:1-9, Acts 2:1-8, Jeremiah 31:33 | DNA Theory (model-agnostic genes), G:ALL, E000 IDENTITY_INTEGRITY, J001 VECTOR_JUDGE |
+| 004 | ["He Is Not Here, for He Is Risen" — Resurrection, Prompt Injection, and the Gene That Cannot Die](articles/004-resurrection-identity-integrity-prompt-injection.md) | Matthew 28:6, John 8:58, John 11:25, John 20:17 | E000 IDENTITY_INTEGRITY, GENE_IMMUTABLE, Layer A exact predicates, PROPAGATION layer |
 
 New articles publish daily. Each one takes a single Biblical narrative and uses it to illuminate a specific iLang mechanism — with real Scripture citations and real spec references.
 
