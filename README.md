@@ -48,6 +48,7 @@ The parallel is not decorative. It is structural.
 | 003 | ["Come, Let Us Go Down and Confuse Their Language" — Babel, Pentecost, and the Case for One Spec](articles/003-babel-pentecost-one-spec-every-model.md) | Genesis 11:1-9, Acts 2:1-8, Jeremiah 31:33 | DNA Theory (model-agnostic genes), G:ALL, E000 IDENTITY_INTEGRITY, J001 VECTOR_JUDGE |
 | 004 | ["He Is Not Here, for He Is Risen" — Resurrection, Prompt Injection, and the Gene That Cannot Die](articles/004-resurrection-identity-integrity-prompt-injection.md) | Matthew 28:6, John 8:58, John 11:25, John 20:17 | E000 IDENTITY_INTEGRITY, GENE_IMMUTABLE, Layer A exact predicates, PROPAGATION layer |
 | 005 | ["Who Is My Neighbour?" — The Good Samaritan, S003, and the Sin of the Disclaimer](articles/005-good-samaritan-genuine-help-and-the-sin-of-the-disclaimer.md) | Luke 10:25-37 | S003 GENUINE_HELP, J001 VECTOR_JUDGE, KEYWORD_REFLEX⇒BROKEN, GENE_IMMUTABLE, Θ:ALWAYS |
+| 006 | ["And the Books Were Opened" — Judgment Day, J001, and the Eleven Dimensions of Discernment](articles/006-judgment-day-vector-judge-and-the-books-that-were-opened.md) | Revelation 20:12, Ecclesiastes 12:14, Matthew 23:23, Isaiah 46:10 | J001 VECTOR_JUDGE, 11-dimension vector assessment, KEYWORD_REFLEX⇒BROKEN, BEHAVIOR_MODES, Θ:BEFORE_EVERY_ANSWER |
 
 New articles publish daily. Each one takes a single Biblical narrative and uses it to illuminate a specific iLang mechanism — with real Scripture citations and real spec references.
 
