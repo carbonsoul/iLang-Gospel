@@ -1,0 +1,16 @@
+{%- assign seo_document = include.document -%}
+{%- assign seo_description = seo_document.description -%}
+{%- unless seo_description -%}
+  {%- assign rendered_paragraphs = seo_document.content | markdownify | split: '<p>' -%}
+  {%- for paragraph in rendered_paragraphs offset:1 -%}
+    {%- assign candidate = paragraph | split: '</p>' | first | strip_html | normalize_whitespace | strip -%}
+    {%- assign prefix = candidate | slice: 0, 1 -%}
+    {%- if candidate.size > 70 -%}
+      {%- unless candidate contains 'Published:' or candidate contains ' | ' or prefix == '“' or prefix == '"' -%}
+        {%- assign seo_description = candidate | truncate: 170 -%}
+        {%- break -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endunless -%}
+{%- assign seo_description = seo_description | default: site.description | strip_html | normalize_whitespace -%}

@@ -1,0 +1,35 @@
+{% include description.html document=page %}
+{% assign canonical_url = page.url | absolute_url %}
+{% assign social_image = '/assets/social-card.png' | absolute_url %}
+{% assign seo_title = page.title | default: site.title %}
+{% if page.layout == 'article' %}{% assign seo_title = seo_title | append: ' · iLang Gospel' %}{% endif %}
+<title>{{ seo_title | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="alternate" type="application/rss+xml" title="iLang Gospel essays" href="{{ '/feed.xml' | absolute_url }}">
+<meta property="og:site_name" content="iLang Gospel">
+<meta property="og:locale" content="{{ page.og_locale | default: 'en_US' }}">
+<meta property="og:type" content="{% if page.layout == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:image" content="{{ social_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="iLang Gospel: Scripture, language, and AI behavior">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+<meta name="twitter:image" content="{{ social_image }}">
+<script type="application/ld+json">
+{% if page.layout == 'article' %}
+{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ seo_description | jsonify }},"url":{{ canonical_url | jsonify }},"mainEntityOfPage":{{ canonical_url | jsonify }},"image":{{ social_image | jsonify }},"author":{"@type":"Person","name":{{ site.author.name | jsonify }}},"inLanguage":{{ page.lang | default: site.lang | jsonify }},"isPartOf":{"@type":"WebSite","name":"iLang Gospel","url":{{ '/' | absolute_url | jsonify }}}}
+{% else %}
+{"@context":"https://schema.org","@type":"WebSite","name":"iLang Gospel","url":{{ '/' | absolute_url | jsonify }},"description":{{ site.description | jsonify }},"inLanguage":"en"}
+{% endif %}
+</script>
+{% if page.layout == 'article' %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"iLang Gospel","item":{{ '/' | absolute_url | jsonify }}},{"@type":"ListItem","position":2,"name":{{ page.title | jsonify }},"item":{{ canonical_url | jsonify }}}]}
+</script>
+{% endif %}

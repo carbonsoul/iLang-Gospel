@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  {% include seo.html %}
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to article</a>
+  <header class="opening"><div class="masthead wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">iLang Gospel</a>
+    <nav aria-label="Main navigation"><a href="{{ '/' | relative_url }}#essays">All essays</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="{{ '/' | relative_url }}#connect">Connect</a></nav>
+  </div></header>
+  <main id="main" class="reading wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Reading</span></nav>
+    <article>
+      <h1>{{ page.title | escape }}</h1>
+      <div class="article-body">{% if page.code_document %}<pre><code>{{ page.content | escape }}</code></pre>{% else %}{{ content }}{% endif %}</div>
+    </article>
+    {% if page.path contains 'articles/' %}
+    {% assign essays = site.pages | where_exp: 'item', "item.path contains 'articles/'" | sort: 'path' %}
+    <nav class="reading-next" aria-label="More essays">
+    {% for essay in essays %}{% if essay.url == page.url %}
+      {% unless forloop.first %}{% assign previous_index = forloop.index0 | minus: 1 %}{% assign previous = essays[previous_index] %}<a rel="prev" href="{{ previous.url | relative_url }}">Previous essay: {{ previous.title | split: ' — ' | last | escape }}</a>{% endunless %}
+      {% unless forloop.last %}{% assign next_index = forloop.index0 | plus: 1 %}{% assign next = essays[next_index] %}<a rel="next" href="{{ next.url | relative_url }}">Next essay: {{ next.title | split: ' — ' | last | escape }}</a>{% endunless %}
+    {% endif %}{% endfor %}
+    </nav>
+    {% endif %}
+    <p class="source-link"><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/{{ page.path | uri_escape }}">View the Markdown source</a></p>
+  </main>
+  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Scripture meets AI behavior.</p><nav aria-label="Footer navigation"><a href="{{ '/' | relative_url }}#essays">All essays</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
 ---
 system: Gospel reading index
-source: index.html
+source: assets/site.css
 fonts:
   reading: "Georgia, Times New Roman, serif"
   literal_code: "ui-monospace, monospace"
@@ -57,4 +57,4 @@ Search uses actual article text and source metadata, normalizes Unicode, and mat
 Wide layouts pair related content; at 640px they become a single reading column. At 900px the archive changes from three columns to two, then to one on phones. Text wraps inside shrinking containers. The only authored animation is an 8px passage-change translation over 350ms; content stays visible throughout. Reduced motion removes it entirely. There are no background loops, hover-only content, or hidden entrance states.
 
 ## Implementation and Verification
-index.html holds all styling and behavior. No external fonts, images, build tools, or client dependencies are required. Existing Markdown remains the source of truth; adding an essay requires adding its static row to the page and README. The initial 18 rows were derived from the existing README article catalog. Verification evidence and rule dispositions are recorded in DESIGN-REVIEW.md. GitHub's own README styling remains a documented platform limitation; these CSS tokens apply to the authored webpage.
+assets/site.css shares styling between the homepage and article layout. index.html holds the catalog template and client interactions. Jekyll generates the article inventory and full reading pages from the existing Markdown; an Actions task maintains the marked README table. A local PNG provides social previews, with no external browser assets or client dependencies. The reading layout uses the existing palette and a bounded 72ch outer column, 20px desktop prose and 16px mobile prose. Details of SEO and automated validation are in SEO.md. DESIGN-REVIEW.md records the initial design review. GitHub's own README styling remains a documented platform limitation; these CSS tokens apply to the authored webpage.

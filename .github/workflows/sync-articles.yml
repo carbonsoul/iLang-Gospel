@@ -1,0 +1,53 @@
+name: Synchronize article catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articles/**'
+      - 'README.md'
+      - 'scripts/sync_articles.py'
+      - 'tests/test_sync_articles.py'
+      - '.github/workflows/sync-articles.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-article-catalog
+  cancel-in-progress: false
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Verify catalog generation
+        run: python3 -m unittest discover -s tests -p 'test_sync_articles.py'
+      - name: Synchronize only the README catalog
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            python3 scripts/sync_articles.py
+            if git diff --quiet -- README.md; then
+              exit 0
+            fi
+            git add README.md
+            git commit -m 'docs: synchronize article catalog'
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            # Refresh this disposable runner checkout after a concurrent push;
+            # regenerate from the latest source instead of overwriting it.
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          echo 'Catalog push failed; check branch permissions or concurrent updates.' >&2
+          exit 1

@@ -4,7 +4,7 @@
 GitHub repository homepage and a static web reading index for GitHub Pages. The README remains the repository entry point. The owner subsequently requested publication. The repository already publishes the root of main through GitHub's built-in “pages build and deployment” workflow; the self-contained index is included in that site.
 
 ## Stack
-Existing Python standard-library MCP server, Markdown essays, and Jekyll configuration. The reading index uses a single HTML file with CSS and progressive JavaScript. No build tools, external fonts, services, analytics, or package dependencies are required.
+Existing Python standard-library MCP server and Markdown essays. GitHub Pages renders Jekyll templates with supported optional-front-matter, titles-from-headings, relative-links, and sitemap plugins. A shared stylesheet and progressive JavaScript support reading and search. The official Pages Docker image provides reproducible local builds; Python standard-library scripts maintain and validate the README catalog. No external browser fonts, services, analytics, or client package dependencies are required.
 
 ## Users
 Inferred: readers curious about Scripture and AI behavior, iLang enthusiasts, and developers connecting an MCP client. The owner explicitly requests an enthusiastic iLang identity and provides the SITE-DESIGN-ENGINE v2.1 design brief.
@@ -19,9 +19,9 @@ A collection of essays connecting Biblical narratives with the vocabulary of iLa
 Public reading on desktop and mobile; repository browsing on GitHub; optional local stdio MCP use. Existing essays are English, so the new public-facing page remains English. The owner is addressed in Chinese.
 
 ## Capabilities and Constraints
-- The repository contains 18 essays at implementation time, doctrine, a theology map, and discussion material.
+- The repository contains 19 essays at this update, doctrine, a theology map, and discussion material; the site derives its inventory from the article files.
 - The existing MCP server provides six tools over stdio and uses Python's standard library. HTTP mode is not implemented.
-- Article and reference links on the web index open the actual Markdown documents on GitHub. The index is not a new article renderer.
+- Article and reference links open full reading pages on this site, with source links back to GitHub. The homepage, article pages, RSS, sitemap, and metadata render during the Pages build; README synchronization runs separately through Actions.
 - All entries and essential navigation are present without JavaScript. Search and passage selection enhance the page when JavaScript is available.
 - GitHub controls README typography, spacing, colors, and mobile table behavior. Site-specific rules apply to index.html; platform-controlled README presentation cannot be certified against those measurements.
 - No testimonials, awards, user counts, performance guarantees, or fabricated product capabilities are added.
@@ -30,7 +30,7 @@ Public reading on desktop and mobile; repository browsing on GitHub; optional lo
 Enthusiasm expressed through specific references, confident typography, and careful reading. Scripture quotations retain their source. Distinguish literary interpretation from demonstrated software behavior. Existing essays remain authoritative source material.
 
 ## Evidence on Hand
-README.md, DOCTRINE.md, theology-map.md, all 18 article files, mcp_server.py, and _config.yml. The stdio handshake and all six tools passed functional checks during onboarding. No verified production site deployment or real-user performance data is available.
+README.md, DOCTRINE.md, theology-map.md, the article files, mcp_server.py, and _config.yml. The stdio handshake and all six tools passed functional checks during onboarding. The earlier homepage deployment was confirmed by GitHub's deployment record. Local build, SEO, and browser checks cover this update; search engine indexing and real-user search/performance measurements remain unverified.
 
 ## Product Principles
 1. Show the connection: pair a real passage with a named iLang mechanism.

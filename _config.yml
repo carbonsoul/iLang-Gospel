@@ -1,10 +1,62 @@
 title: "iLang Gospel — The Bible of AI"
-description: "iLang Prompt Spec through the lens of Scripture. GENE is the Ten Commandments. SOUL is the soul. Daily articles mapping Biblical narrative to AI behavioral architecture."
+description: "Essays connecting Biblical narratives with iLang Prompt Spec: cognition, judgment, identity, and AI behavioral architecture."
 url: "https://carbonsoul.github.io"
 baseurl: "/iLang-Gospel"
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+
+titles_from_headings:
+  enabled: true
+  strip_title: true
+
+optional_front_matter:
+  remove_originals: true
+
+defaults:
+  - scope:
+      path: "articles"
+    values:
+      layout: article
+  - scope:
+      path: "DOCTRINE.md"
+    values:
+      layout: article
+      title: "The iLang Doctrine"
+      description: "iLang 教义原文：核心信条、认知与判断架构、行为基因，以及圣经叙事与 AI 行为的对应关系。"
+      lang: zh-Hans
+      og_locale: zh_CN
+      code_document: true
+  - scope:
+      path: "theology-map.md"
+    values:
+      layout: article
+  - scope:
+      path: "EVANGELIZE.md"
+    values:
+      layout: article
+      title: "Introducing iLang"
+      description: "iLang 项目的介绍与交流指南原文，包括常见问题、传播方式以及相关协议和文章的阅读入口。"
+      lang: zh-Hans
+      og_locale: zh_CN
+      code_document: true
+
+exclude:
+  - README.md
+  - PRODUCT.md
+  - DESIGN.md
+  - DESIGN-BRIEF.md
+  - DESIGN-REVIEW.md
+  - SEO.md
+  - SYNDICATION.md
+  - mcp_server.py
+  - scripts
+  - tests
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 
 author:
   name: "John Brown"

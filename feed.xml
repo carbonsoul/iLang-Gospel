@@ -1,0 +1,24 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iLang Gospel</title>
+    <link>{{ '/' | absolute_url }}</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>en</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+    {% assign essays = site.pages | where_exp: 'item', "item.path contains 'articles/'" | sort: 'path' | reverse %}
+    {% for essay in essays %}{% include description.html document=essay %}
+    <item>
+      <title>{{ essay.title | xml_escape }}</title>
+      <link>{{ essay.url | absolute_url }}</link>
+      <guid isPermaLink="true">{{ essay.url | absolute_url }}</guid>
+      <description>{{ seo_description | xml_escape }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

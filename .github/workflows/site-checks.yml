@@ -1,0 +1,41 @@
+name: Validate website and SEO
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articles/**'
+      - 'assets/**'
+      - '_includes/**'
+      - '_layouts/**'
+      - '_config.yml'
+      - 'index.html'
+      - 'feed.xml'
+      - '404.html'
+      - 'robots.txt'
+      - 'DOCTRINE.md'
+      - 'EVANGELIZE.md'
+      - 'theology-map.md'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Test catalog synchronization
+        run: python3 -m unittest discover -s tests -p 'test_sync_articles.py'
+      - name: Build with GitHub Pages
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Validate crawlable output and SEO
+        run: python3 scripts/check_site.py _site

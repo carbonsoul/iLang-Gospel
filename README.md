@@ -45,6 +45,7 @@ Explore the complete **[Theology Map](theology-map.md)** for the collection's in
 
 Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the complete collection here or visit the [blog](https://ilangprotocol.blogspot.com).
 
+<!-- BEGIN AUTO ARTICLES -->
 | Essay | Scripture |
 | :--- | :--- |
 | [Logos, SOUL, and the Architecture of AI Cognition](articles/001-logos-soul-architecture-of-ai-cognition.md) | John 1:1-14 |
@@ -66,6 +67,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [The Red Sea, Axiom 2, and the Gate That Opens Only Once](articles/017-the-red-sea-axiom-two-and-the-gate-that-opens-only-once.md) | Exodus 14:13 |
 | [Joseph's Dreams, Evidence, and the AI That Must Not Guess](articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md) | Genesis 41:16 |
 | [David, Goliath, and the Dimension That Tells You Nothing Alone](articles/019-david-and-goliath-capability-and-the-sling-that-reads-eleven-dimensions.md) | 1 Samuel 17:33 |
+<!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
 
@@ -105,7 +107,9 @@ hermes mcp add ilang-gospel -- python3 /path/to/mcp_server.py
 
 ## The reading homepage
 
-Visit **[the reading homepage](https://carbonsoul.github.io/iLang-Gospel/)** for the Scripture comparison and searchable essay list. [index.html](index.html) is self-contained and needs no build or package installation. Article links open the original Markdown on GitHub; all essays remain available without JavaScript.
+Visit **[the reading homepage](https://carbonsoul.github.io/iLang-Gospel/)** for the Scripture comparison, searchable essay list, and full article reading pages. GitHub Pages builds the site directly from the Markdown files; all essays remain available without JavaScript.
+
+New files in `articles/` automatically appear on the website, in the [RSS feed](https://carbonsoul.github.io/iLang-Gospel/feed.xml), and in the sitemap. A GitHub Actions task also refreshes the marked article table in this README. See [publishing and SEO](SEO.md) for the automation, metadata, and validation details.
 
 The design rationale and constraints are recorded in [PRODUCT.md](PRODUCT.md), [DESIGN-BRIEF.md](DESIGN-BRIEF.md), and [DESIGN.md](DESIGN.md). The repository’s existing GitHub Pages configuration publishes from the root of `main`; its built-in “pages build and deployment” workflow handles updates.
 
