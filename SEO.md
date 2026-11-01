@@ -13,7 +13,7 @@ Add a Markdown file under articles/ using the existing numbered filename pattern
 
 Edits and deletions are reflected by the generated catalogs and outputs. Fixed editorial selections in the homepage's Scripture comparison and README's “Start reading” section are authored recommendations; if those particular source essays are removed or renamed, update those editorial links too. The build validator detects missing site targets.
 
-The site does not depend on the README synchronization commit: its catalog is derived directly from the article files in the triggering revision. GitHub token-authenticated bot commits do not start another workflow or Pages build, preventing a synchronization loop. Concurrent human pushes are preserved by regenerating from the newest main in the disposable runner checkout; no force push is used. Repository branch rules can block bot writes, in which case the workflow reports a failure rather than bypassing protection.
+The site does not depend on the README synchronization commit: its catalog is derived directly from the article files in the triggering revision. Synchronization is idempotent and commits only actual catalog changes; an already synchronized catalog exits without another commit. Pages may rebuild the resulting main revision, but the article inventory is the same. Concurrent human pushes are preserved by regenerating from the newest main in the disposable runner checkout; no force push is used. Repository branch rules can block bot writes, in which case the workflow reports a failure rather than bypassing protection.
 
 ## Search metadata
 
