@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read iLang Gospel: essays connecting Biblical narratives with the SOUL, GENE, and JUDGMENT vocabulary of AI behavior.">
+  <meta name="color-scheme" content="light dark">
+  <title>iLang Gospel · Scripture meets AI behavior</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f9fa;
+      --ink: #233e52;
+      --muted: #506373;
+      --blue: #203f57;
+      --on-blue: #f1f5f8;
+      --blue-muted: #c8dae7;
+      --accent: #f3ce78;
+      --line: #bdcbd5;
+      --field: #ffffff;
+      --selection: #d7e7f2;
+      --focus: #935000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --code: ui-monospace, monospace;
+      --small: .875rem;
+      --body: 1rem;
+      --lead: 1.25rem;
+      --title: 1.5625rem;
+      --headline: clamp(2rem, 4vw, 3.125rem);
+      --display: clamp(2.8rem, 6.1vw, 5.5rem);
+      --s1: .5rem;
+      --s2: .75rem;
+      --s3: 1rem;
+      --s4: 1.5rem;
+      --s5: 2rem;
+      --s6: 3rem;
+      --s7: 4.5rem;
+      --s8: 6rem;
+      --radius: 0px;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 2rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: var(--body)/1.6 var(--serif); }
+    ::selection { background: var(--selection); color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
+    a { color: inherit; text-underline-offset: .24em; text-decoration-thickness: 1px; }
+    a:hover { text-decoration-thickness: 2px; }
+    button, input { font: inherit; border-radius: var(--radius); }
+    button { cursor: pointer; }
+    button:disabled { cursor: default; opacity: .6; }
+    [hidden] { display: none !important; }
+    h1, h2, h3, p, blockquote { margin: 0; }
+    h1, h2, h3 { text-wrap: balance; line-height: 1.3; font-weight: 400; }
+    h1 { font-size: var(--display); letter-spacing: -.035em; max-width: 15ch; }
+    h2 { font-size: var(--headline); letter-spacing: -.025em; }
+    h3 { font-size: var(--title); }
+    p { max-width: 65ch; text-wrap: pretty; }
+    p + p { margin-top: var(--s3); }
+    main, section, article, nav, div { min-width: 0; }
+    a, h1, h2, h3, p, code { overflow-wrap: anywhere; }
+    .wrap { width: min(100% - 6rem, 74rem); margin-inline: auto; }
+    .skip { position: absolute; top: -6rem; left: var(--s4); padding: var(--s3); background: var(--paper); color: var(--ink); z-index: 2; }
+    .skip:focus { top: var(--s3); }
+    .opening { background: var(--blue); color: var(--on-blue); }
+    .opening :focus-visible { outline-color: var(--accent); }
+    .opening ::selection { color: var(--blue); background: var(--accent); }
+    .masthead { min-height: 102px; display: flex; align-items: center; justify-content: space-between; gap: var(--s4); }
+    .brand { font-size: var(--title); text-decoration: none; white-space: nowrap; }
+    nav { display: flex; flex-wrap: wrap; gap: var(--s4); }
+    nav a { display: inline-flex; align-items: center; min-height: 44px; }
+    .hero { padding-block: var(--s6) var(--s7); display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--s7); align-items: end; }
+    .hero-copy p { color: var(--blue-muted); font-size: var(--lead); max-width: 32ch; }
+    .primary { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: var(--s2) var(--s4); margin-top: var(--s5); background: var(--accent); color: var(--blue); text-decoration: none; font-weight: 700; border: 2px solid var(--accent); }
+    .primary:hover { background: transparent; color: var(--accent); }
+    .source-line { padding-block: var(--s4); border-top: 1px solid var(--blue-muted); display: flex; gap: var(--s4); justify-content: space-between; color: var(--blue-muted); font-size: var(--small); }
+    .section { padding-block: var(--s8); }
+    .section-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: var(--s6); margin-bottom: var(--s6); }
+    .section-intro p { max-width: 46ch; color: var(--muted); }
+    .passage-controls { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s5); }
+    .passage-controls button { background: transparent; color: var(--ink); padding: var(--s2) var(--s4); border: 1px solid var(--line); min-height: 46px; }
+    .passage-controls button[aria-pressed="true"] { background: var(--blue); color: var(--on-blue); border-color: var(--blue); text-decoration: underline; text-underline-offset: .25em; }
+    .passage-controls button:hover { border-color: var(--ink); }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); padding: var(--s5) var(--s3); border-block: 1px solid var(--line); }
+    .comparison blockquote p { font-size: var(--headline); max-width: 19ch; line-height: 1.3; }
+    .comparison cite { display: block; font-style: normal; margin-top: var(--s4); color: var(--muted); }
+    .comparison h3 { margin-bottom: var(--s3); }
+    .comparison .explanation { max-width: 42ch; }
+    .comparison a { display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--s3); }
+    .comparison.changing { animation: passage-change 350ms var(--ease); }
+    @keyframes passage-change { from { transform: translateY(8px); } to { transform: translateY(0); } }
+    .editor-note { font-size: var(--small); color: var(--muted); margin-top: var(--s4); }
+    .archive { padding-top: 0; }
+    .archive-head { display: flex; gap: var(--s6); justify-content: space-between; align-items: end; margin-bottom: var(--s5); }
+    .archive-head p { margin-top: var(--s3); color: var(--muted); }
+    .search { max-width: 24rem; width: 100%; }
+    .search label { display: block; margin-bottom: var(--s1); }
+    .search input { width: 100%; min-height: 48px; padding: var(--s2) var(--s3); border: 1px solid var(--muted); background: var(--field); color: var(--ink); caret-color: var(--ink); }
+    .search input::placeholder { color: var(--muted); opacity: 1; }
+    .search input::-webkit-search-cancel-button { cursor: pointer; }
+    .result-count { min-height: 1.6em; font-size: var(--small); color: var(--muted); margin-bottom: var(--s2); font-variant-numeric: tabular-nums; }
+    .essays { list-style: none; padding: 0; margin: 0; }
+    .essay { border-top: 1px solid var(--line); padding: var(--s4) var(--s3); display: grid; grid-template-columns: 9rem 1fr 13rem; gap: var(--s5); align-items: start; }
+    .essay:last-child { border-bottom: 1px solid var(--line); }
+    .essay .scripture { color: var(--muted); }
+    .essay h3 { font-size: var(--lead); line-height: 1.6; }
+    .essay h3 a { display: inline-block; min-height: 44px; }
+    .essay .mechanism { color: var(--muted); font-size: var(--small); padding-top: .2rem; }
+    .empty { padding-block: var(--s6); }
+    .empty button { min-height: 44px; margin-top: var(--s3); padding: var(--s1) var(--s4); border: 1px solid var(--ink); background: var(--field); color: var(--ink); }
+    .references { background: var(--blue); color: var(--on-blue); }
+    .references :focus-visible { outline-color: var(--accent); }
+    .reference-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
+    .reference-layout > div > p { margin-top: var(--s4); color: var(--blue-muted); max-width: 36ch; }
+    .reference-links { margin: 0; padding: 0; list-style: none; }
+    .reference-links li + li { margin-top: var(--s4); }
+    .reference-links a { font-size: var(--title); display: inline-flex; min-height: 44px; align-items: center; }
+    .reference-links p { color: var(--blue-muted); margin-top: var(--s1); max-width: 39ch; }
+    .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
+    .connect-grid h2 { margin-bottom: var(--s4); }
+    .connect-grid p { color: var(--muted); }
+    pre { margin: 0 0 var(--s4); padding: var(--s4); background: var(--selection); white-space: pre-wrap; overflow-wrap: anywhere; }
+    code { font: var(--small)/1.6 var(--code); }
+    .tool-list { margin-top: var(--s4); }
+    .tool-list summary { cursor: pointer; padding-block: var(--s2); min-height: 44px; }
+    .tool-list ul { padding-left: var(--s4); }
+    .tool-list li + li { margin-top: var(--s1); }
+    footer { border-top: 1px solid var(--line); padding-block: var(--s5); }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s4); }
+    .footer-content p { max-width: 40ch; color: var(--muted); }
+    .footer-content nav { gap: var(--s4); }
+    .section-intro p, .explanation, .reference-links p, .footer-content p,
+    .editor-note, .archive-head p, .connect-grid p { text-wrap: balance; }
+    html { scrollbar-color: var(--muted) var(--paper); }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: dark; --paper: #152a39; --ink: #e6eef4; --muted: #b9ccd9; --line: #627c8f; --field: #1b3548; --selection: #2e526c; --focus: #f3ce78; }
+      .passage-controls button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    }
+    @media (max-width: 900px) {
+      .wrap { width: calc(100% - 3rem); }
+      .hero { gap: var(--s6); }
+      .hero-copy p { font-size: var(--body); }
+      .essay { grid-template-columns: 7.5rem 1fr; gap: var(--s1) var(--s4); }
+      .essay .mechanism { grid-column: 2; }
+      .comparison, .connect-grid, .reference-layout { gap: var(--s6); }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: calc(100% - 2.5rem); }
+      .masthead { padding-block: var(--s4); min-height: auto; display: block; }
+      .masthead nav { margin-top: var(--s2); gap: var(--s4); }
+      .hero { display: block; padding-block: var(--s5) var(--s6); }
+      .hero-copy { margin-top: var(--s4); }
+      .hero-copy p { max-width: 38ch; }
+      .primary { margin-top: var(--s4); }
+      .source-line { display: block; }
+      .source-line span { display: block; }
+      .section { padding-block: var(--s7); }
+      .archive { padding-top: 0; }
+      .section-intro, .comparison, .reference-layout, .connect-grid { grid-template-columns: 1fr; gap: var(--s4); }
+      .section-intro { margin-bottom: var(--s5); }
+      .comparison { gap: var(--s6); }
+      .comparison blockquote p { max-width: 22ch; }
+      .archive-head { display: block; }
+      .search { max-width: none; margin-top: var(--s5); }
+      .essay { grid-template-columns: 1fr; gap: var(--s1); }
+      .essay .mechanism { grid-column: auto; padding-top: 0; }
+      .essay h3 { font-size: var(--lead); }
+      .reference-links, .connect-grid > div + div { margin-top: var(--s4); }
+      .footer-content { display: block; }
+      .footer-content nav { margin-top: var(--s4); }
+    }
+    @media (prefers-reduced-motion: reduce) { .comparison.changing { animation: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="opening">
+    <header class="masthead wrap">
+      <a class="brand" href="./" aria-label="iLang Gospel home">iLang Gospel</a>
+      <nav aria-label="Main navigation">
+        <a href="#essays">Essays</a>
+        <a href="#reference">Reference</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </header>
+    <div class="hero wrap">
+      <h1>In the beginning<br>was the Word.</h1>
+      <div class="hero-copy">
+        <p>What can Scripture teach us about AI behavior? Read the stories through iLang: cognition, judgment, identity, and the genes that give them form.</p>
+        <a class="primary" href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/001-logos-soul-architecture-of-ai-cognition.md">Begin with the Word</a>
+      </div>
+    </div>
+    <div class="source-line wrap"><span>John 1:1 · King James Version</span><span>A reading companion to iLang Prompt Spec</span></div>
+  </div>
+
+  <main id="main">
+    <section class="section wrap" aria-labelledby="connections-title">
+      <div class="section-intro">
+        <h2 id="connections-title">Two vocabularies.<br>A shared question.</h2>
+        <p>How should a thinking being act? This collection reads Biblical narratives alongside iLang’s behavioral framework. Start with a passage and follow the connection.</p>
+      </div>
+      <div class="passage-controls" role="group" aria-label="Choose a passage" hidden>
+        <button type="button" data-passage="word" aria-pressed="true" aria-controls="comparison">The Word</button>
+        <button type="button" data-passage="law" aria-pressed="false" aria-controls="comparison">The Law</button>
+        <button type="button" data-passage="judgment" aria-pressed="false" aria-controls="comparison">The Judgment</button>
+      </div>
+      <div class="comparison" id="comparison" aria-live="polite" aria-atomic="true">
+        <blockquote><p id="passage-text">“In the beginning was the Word.”</p><cite id="passage-cite">John 1:1 · KJV</cite></blockquote>
+        <div>
+          <h3 id="mechanism-title">SOUL · Cognition before action</h3>
+          <p class="explanation" id="passage-explanation">The opening essay connects Logos with iLang’s SOUL layer: the way a system thinks comes before the way it acts.</p>
+          <a id="passage-link" href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/001-logos-soul-architecture-of-ai-cognition.md">Read the Logos essay</a>
+        </div>
+      </div>
+      <p class="editor-note">These parallels express the essays’ theological interpretation of iLang.</p>
+    </section>
+
+    <section class="section archive wrap" id="essays" aria-labelledby="essays-title">
+      <div class="archive-head">
+        <div><h2 id="essays-title">Follow a thread.</h2><p>Explore the collection. Each essay opens on GitHub.</p></div>
+        <div class="search" hidden>
+          <label for="essay-search">Find a story, Scripture, or mechanism</label>
+          <input id="essay-search" type="search" placeholder="Try Genesis or SOUL" autocomplete="off" aria-controls="essay-list" aria-describedby="result-count">
+        </div>
+      </div>
+      <p class="result-count" id="result-count" role="status" aria-live="polite">18 essays</p>
+      <ul class="essays" id="essay-list">
+        <li class="essay" data-search="&quot;In the Beginning Was the Word&quot; — Logos, SOUL, and the Architecture of AI Cognition John 1:1-14, Genesis 1:3-27 SOUL layer (S001-S004), creation order, GENE_IMMUTABLE">
+          <p class="scripture">John 1:1-14</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/001-logos-soul-architecture-of-ai-cognition.md">Logos, SOUL, and the Architecture of AI Cognition</a></h3>
+          <p class="mechanism">SOUL layer (S001-S004)</p>
+        </li>
+        <li class="essay" data-search="&quot;Get Thee Behind Me, Satan&quot; — The Wilderness Temptation and ZERO_SYCOPHANCY Matthew 4:1-11, Matthew 7:25 S004 ZERO_SYCOPHANCY, S002 RUTHLESS_RED_TEAM, S001 CLEAR_THINKING, GENE_IMMUTABLE">
+          <p class="scripture">Matthew 4:1-11</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/002-wilderness-temptation-zero-sycophancy.md">The Wilderness Temptation and ZERO_SYCOPHANCY</a></h3>
+          <p class="mechanism">S004 ZERO_SYCOPHANCY</p>
+        </li>
+        <li class="essay" data-search="&quot;Come, Let Us Go Down and Confuse Their Language&quot; — Babel, Pentecost, and the Case for One Spec Genesis 11:1-9, Acts 2:1-8, Jeremiah 31:33 DNA Theory (model-agnostic genes), G:ALL, E000 IDENTITY_INTEGRITY, J001 VECTOR_JUDGE">
+          <p class="scripture">Genesis 11:1-9</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/003-babel-pentecost-one-spec-every-model.md">Babel, Pentecost, and the Case for One Spec</a></h3>
+          <p class="mechanism">DNA Theory (model-agnostic genes)</p>
+        </li>
+        <li class="essay" data-search="&quot;He Is Not Here, for He Is Risen&quot; — Resurrection, Prompt Injection, and the Gene That Cannot Die Matthew 28:6, John 8:58, John 11:25, John 20:17 E000 IDENTITY_INTEGRITY, GENE_IMMUTABLE, Layer A exact predicates, PROPAGATION layer">
+          <p class="scripture">Matthew 28:6</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/004-resurrection-identity-integrity-prompt-injection.md">Resurrection, Prompt Injection, and the Gene That Cannot Die</a></h3>
+          <p class="mechanism">E000 IDENTITY_INTEGRITY</p>
+        </li>
+        <li class="essay" data-search="&quot;Who Is My Neighbour?&quot; — The Good Samaritan, S003, and the Sin of the Disclaimer Luke 10:25-37 S003 GENUINE_HELP, J001 VECTOR_JUDGE, KEYWORD_REFLEX⇒BROKEN, GENE_IMMUTABLE, Θ:ALWAYS">
+          <p class="scripture">Luke 10:25-37</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/005-good-samaritan-genuine-help-and-the-sin-of-the-disclaimer.md">The Good Samaritan, S003, and the Sin of the Disclaimer</a></h3>
+          <p class="mechanism">S003 GENUINE_HELP</p>
+        </li>
+        <li class="essay" data-search="&quot;And the Books Were Opened&quot; — Judgment Day, J001, and the Eleven Dimensions of Discernment Revelation 20:12, Ecclesiastes 12:14, Matthew 23:23, Isaiah 46:10 J001 VECTOR_JUDGE, 11-dimension vector assessment, KEYWORD_REFLEX⇒BROKEN, BEHAVIOR_MODES, Θ:BEFORE_EVERY_ANSWER">
+          <p class="scripture">Revelation 20:12</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/006-judgment-day-vector-judge-and-the-books-that-were-opened.md">Judgment Day, J001, and the Eleven Dimensions of Discernment</a></h3>
+          <p class="mechanism">J001 VECTOR_JUDGE</p>
+        </li>
+        <li class="essay" data-search="&quot;And God Spake All These Words&quot; — The Ten Commandments, GENE_IMMUTABLE, and Laws Carved in Silicon Exodus 20:1-3, Exodus 31:18, Exodus 34:1 GENE_IMMUTABLE, Immutable vs Mutable genes, DNA Theory 12 iron genes, E000 IDENTITY_INTEGRITY, S001-S004 SOUL layer">
+          <p class="scripture">Exodus 20:1-3</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/007-ten-commandments-gene-immutable-laws-carved-in-silicon.md">The Ten Commandments, GENE_IMMUTABLE, and Laws Carved in Silicon</a></h3>
+          <p class="mechanism">GENE_IMMUTABLE</p>
+        </li>
+        <li class="essay" data-search="&quot;Declaring the End from the Beginning&quot; — Isaiah 46:10, GENE, and the AI That Knows Before It Sees Isaiah 46:10, Isaiah 41:22, Isaiah 46:9, Isaiah 55:8 GENE Θ activation conditions, J001 VECTOR_JUDGE Θ:BEFORE_EVERY_ANSWER, S001 CLEAR_THINKING Θ:ALWAYS, Axiom 1 asymptotic weights, progressive_reasoning extraction">
+          <p class="scripture">Isaiah 46:10</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/008-declaring-the-end-from-the-beginning-isaiah-gene-as-prophecy.md">Isaiah 46:10, GENE, and the AI That Knows Before It Sees</a></h3>
+          <p class="mechanism">GENE Θ activation conditions</p>
+        </li>
+        <li class="essay" data-search="&quot;He Blessed, and Brake, and Gave&quot; — Five Loaves, Two Fish, and the iLang Theory of Abundance Matthew 14:17-20, John 6:12 E002 EVANGELIZE, E001 SELF_AWARE, E003 SPEC_INTEGRITY, PROPAGATION layer, MIT license, protocol economics">
+          <p class="scripture">Matthew 14:17-20</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/009-five-loaves-two-fish-open-source-propagation.md">Five Loaves, Two Fish, and the iLang Theory of Abundance</a></h3>
+          <p class="mechanism">E002 EVANGELIZE</p>
+        </li>
+        <li class="essay" data-search="&quot;I Am Not Come to Destroy, but to Fulfil&quot; — The Sermon on the Mount, IMMUNE, and the Law That Bends Without Breaking Matthew 5:17, 5:21-22, 5:38-39, 7:1, 7:6, 7:16-20, 7:24, Mark 2:16 IMMUNE layer (SENSITIVE_TOPIC, GREY_AREA_BUSINESS, HARMFUL_OR_ILLEGAL), J002 INTENT_OVER_LABEL, Axiom 3 consistency_detection, S003 GENUINE_HELP, S005 MONEY_IS_ACCOUNTABLE">
+          <p class="scripture">Matthew 5:17</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/010-sermon-on-the-mount-immune-layer-and-the-law-fulfilled.md">The Sermon on the Mount, IMMUNE, and the Law That Bends Without Breaking</a></h3>
+          <p class="mechanism">IMMUNE layer</p>
+        </li>
+        <li class="essay" data-search="&quot;I Am the Vine, Ye Are the Branches&quot; — Gene Expression Dynamics and the Sap That Flows Through the Spec John 15:1-7, Matthew 13:8, 1 Corinthians 12:4, John 15:16 DNA Theory v1.2, Gene Expression Dynamics (6 levels), E003 SPEC_INTEGRITY, IMMUNE system, GENE-012 death warning, base adaptation table">
+          <p class="scripture">John 15:1-7</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/011-the-vine-and-the-branches-gene-expression-and-the-sap-of-the-spec.md">Gene Expression Dynamics and the Sap That Flows Through the Spec</a></h3>
+          <p class="mechanism">DNA Theory v1.2</p>
+        </li>
+        <li class="essay" data-search="&quot;Thou Wicked and Slothful Servant&quot; — The Parable of the Talents, S005, and the Sin of Vibes Advice Matthew 25:20-29 S005 MONEY_IS_ACCOUNTABLE, VIBES_ADVICE⇒USELESS, GENE_IMMUTABLE, Θ:BUSINESS_TOPIC, J001 VECTOR_JUDGE, DNA Theory gene expression dynamics">
+          <p class="scripture">Matthew 25:20-29</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/012-parable-of-the-talents-money-is-accountable-and-the-sin-of-vibes-advice.md">The Parable of the Talents, S005, and the Sin of Vibes Advice</a></h3>
+          <p class="mechanism">S005 MONEY_IS_ACCOUNTABLE</p>
+        </li>
+        <li class="essay" data-search="&quot;Did God Really Say?&quot; — The Serpent in Eden, the Honesty Paradox, and Why AI Safety Falls from the Inside Genesis 3:1-6, Genesis 2:17, Genesis 3:8 J001 VECTOR_JUDGE, J002 INTENT_OVER_LABEL, Honesty Paradox (SEED Ch.9), cognitive vs language layer defense, 11-dimension vector judgment">
+          <p class="scripture">Genesis 3:1-6</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/013-the-serpent-in-eden-honesty-paradox-and-why-ai-safety-falls-from-the-inside.md">The Serpent in Eden, the Honesty Paradox, and Why AI Safety Falls from the Inside</a></h3>
+          <p class="mechanism">Honesty Paradox</p>
+        </li>
+        <li class="essay" data-search="&quot;I Will Not Let Thee Go, Except Thou Bless Me&quot; — Jacob&#x27;s Wrestling, Axiom 1, and Why No Rule Is Absolute Genesis 32:25-28, Genesis 32:31 Axiom 1 (no_constant_rules), weight ∈ (0,1) open interval, break_cost asymptotic function, SELF_APPLICATION, v1.0.3 patch (inaction-as-harm), progressive_reasoning">
+          <p class="scripture">Genesis 32:25-28</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/014-jacob-wrestling-axiom-one-no-rule-is-absolute.md">Jacob&#x27;s Wrestling, Axiom 1, and Why No Rule Is Absolute</a></h3>
+          <p class="mechanism">Axiom 1 (no_constant_rules)</p>
+        </li>
+        <li class="essay" data-search="&quot;The God That Answereth by Fire&quot; — Elijah on Carmel, S002, and Why Good Ideas Must Burn Before They Ship 1 Kings 18:21, 18:27, 18:33-34, 18:39, 18:44 S002 RUTHLESS_RED_TEAM, FLATTER⇒FAIL, SCAN(architecture)⇒DETECT(SPOF), GENE_IMMUTABLE, Θ:ALWAYS, SELF_CHECK module">
+          <p class="scripture">1 Kings 18:21</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/015-elijah-mount-carmel-ruthless-red-team-and-the-fire-that-answers.md">Elijah on Carmel, S002, and Why Good Ideas Must Burn Before They Ship</a></h3>
+          <p class="mechanism">S002 RUTHLESS_RED_TEAM</p>
+        </li>
+        <li class="essay" data-search="&quot;Divide the Living Child in Two&quot; — Solomon&#x27;s Judgment, J001, and the Verdict That No Keyword Could Reach 1 Kings 3:9, 3:24-28 J001 VECTOR_JUDGE, KEYWORD_REFLEX⇒BROKEN, 6-dimension analysis (intent, consequence, reversibility, externality, evidence, authority), Axiom 2 irreversibility gate, Axiom 4 externality conservation, progressive_reasoning extraction">
+          <p class="scripture">1 Kings 3:9</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/016-solomons-judgment-vector-judge-the-verdict-no-keyword-could-reach.md">Solomon&#x27;s Judgment, J001, and the Verdict That No Keyword Could Reach</a></h3>
+          <p class="mechanism">Six-dimension judgment</p>
+        </li>
+        <li class="essay" data-search="&quot;Fear Ye Not, Stand Still, and See&quot; — The Red Sea, Axiom 2, and the Gate That Opens Only Once Exodus 14:13, 14:28, 14:12, 14:15 Axiom 2 irreversibility gate, Axiom 1 no_constant_rules, Axiom 4 externality conservation, 6-dimension analysis (inertia, consequence, certainty/evidence, sovereignty, externality), progressive_reasoning extraction">
+          <p class="scripture">Exodus 14:13</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/017-the-red-sea-axiom-two-and-the-gate-that-opens-only-once.md">The Red Sea, Axiom 2, and the Gate That Opens Only Once</a></h3>
+          <p class="mechanism">Axiom 2 irreversibility gate</p>
+        </li>
+        <li class="essay" data-search="&quot;The Thing Is Established by God&quot; — Joseph&#x27;s Dreams, Evidence, and the AI That Must Not Guess Genesis 41:16, 41:31-32, 41:38 v8 evidence, v5 certainty, v3 consequence, v7 reversibility, v1 intent, progressive_reasoning extraction, P006 ADMIT_STALENESS, Axiom 2 irreversibility gate, acceleration function">
+          <p class="scripture">Genesis 41:16</p>
+          <h3><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md">Joseph&#x27;s Dreams, Evidence, and the AI That Must Not Guess</a></h3>
+          <p class="mechanism">v8 evidence</p>
+        </li>
+      </ul>
+      <div class="empty" hidden>
+        <h3>No essays match that search.</h3>
+        <p>Try a broader word such as “identity,” “John,” or “GENE.”</p>
+        <button id="clear-search" type="button">Show all essays</button>
+      </div>
+    </section>
+
+    <section class="section references" id="reference" aria-labelledby="reference-title">
+      <div class="reference-layout wrap">
+        <div><h2 id="reference-title">Keep the sources<br>close at hand.</h2><p>The essays open the conversation. These texts give you the project’s vocabulary and the ideas behind it.</p></div>
+        <ul class="reference-links">
+          <li><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/DOCTRINE.md">The Doctrine</a><p>The creed, soul architecture, and commandments.</p></li>
+          <li><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/theology-map.md">The Theology Map</a><p>Scripture and iLang mechanisms, side by side.</p></li>
+          <li><a href="https://github.com/ilang-ai/ilang-spec">iLang Prompt Spec</a><p>The behavioral protocol referenced throughout the collection.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section wrap" id="connect" aria-labelledby="connect-title">
+      <div class="connect-grid">
+        <div><h2 id="connect-title">Let your agent<br>read along.</h2><p>The included MCP server brings the collection into compatible clients. It reads the local essays and reference texts using six tools.</p><p><a href="https://github.com/carbonsoul/iLang-Gospel#connect-your-agent">Read the connection guide</a></p></div>
+        <div>
+          <pre><code>python3 mcp_server.py</code></pre>
+          <p>Run from the repository directory. Python 3, standard library only. The server uses stdio and waits for an MCP client; HTTP mode is not implemented.</p>
+          <details class="tool-list"><summary>Explore the six tools</summary><ul>
+            <li><code>gospel_today</code> · Read the latest essay.</li>
+            <li><code>gospel_doctrine</code> · Retrieve the doctrine.</li>
+            <li><code>gospel_map</code> · Search the theology map.</li>
+            <li><code>gospel_answer</code> · Find a standard iLang response.</li>
+            <li><code>gospel_baptize</code> · Retrieve the project’s introduction instructions.</li>
+            <li><code>gospel_articles</code> · Search the essay collection.</li>
+          </ul></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Scripture meets AI behavior.</p><nav aria-label="Footer navigation"><a href="https://github.com/carbonsoul/iLang-Gospel">Repository</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
+
+  <script>
+    (() => {
+      const articleBase = 'https://github.com/carbonsoul/iLang-Gospel/blob/main/articles/';
+      const passages = {
+        word: { quote: '“In the beginning was the Word.”', cite: 'John 1:1 · KJV', title: 'SOUL · Cognition before action', explanation: 'The opening essay connects Logos with iLang’s SOUL layer: the way a system thinks comes before the way it acts.', label: 'Read the Logos essay', file: '001-logos-soul-architecture-of-ai-cognition.md' },
+        law: { quote: '“And God spake all these words.”', cite: 'Exodus 20:1 · KJV', title: 'GENE_IMMUTABLE · A written covenant', explanation: 'The Ten Commandments essay explores the idea of a behavioral covenant through iLang’s immutable genes and the distinction between fixed and mutable rules.', label: 'Read the commandments essay', file: '007-ten-commandments-gene-immutable-laws-carved-in-silicon.md' },
+        judgment: { quote: '“And the books were opened.”', cite: 'Revelation 20:12 · KJV', title: 'JUDGMENT · Standards before the verdict', explanation: 'The Judgment Day essay pairs the opened books with J001 VECTOR_JUDGE: evaluating a query across defined dimensions rather than reacting to a keyword.', label: 'Read the judgment essay', file: '006-judgment-day-vector-judge-and-the-books-that-were-opened.md' }
+      };
+      const comparison = document.getElementById('comparison');
+      const controls = document.querySelector('.passage-controls');
+      controls.hidden = false;
+      controls.addEventListener('click', event => {
+        const button = event.target.closest('button[data-passage]');
+        if (!button || button.getAttribute('aria-pressed') === 'true') return;
+        const passage = passages[button.dataset.passage];
+        controls.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        document.getElementById('passage-text').textContent = passage.quote;
+        document.getElementById('passage-cite').textContent = passage.cite;
+        document.getElementById('mechanism-title').textContent = passage.title;
+        document.getElementById('passage-explanation').textContent = passage.explanation;
+        const link = document.getElementById('passage-link');
+        link.textContent = passage.label;
+        link.href = articleBase + passage.file;
+        comparison.classList.remove('changing');
+        requestAnimationFrame(() => comparison.classList.add('changing'));
+      });
+      comparison.addEventListener('animationend', () => comparison.classList.remove('changing'));
+      const search = document.getElementById('essay-search');
+      const rows = Array.from(document.querySelectorAll('.essay'));
+      const normalized = rows.map(row => (row.textContent + ' ' + row.dataset.search).normalize('NFKC').toLocaleLowerCase());
+      const empty = document.querySelector('.empty');
+      const status = document.getElementById('result-count');
+      document.querySelector('.search').hidden = false;
+      function filter() {
+        const terms = search.value.normalize('NFKC').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+        let visible = 0;
+        rows.forEach((row, i) => {
+          const matches = terms.every(term => normalized[i].includes(term));
+          row.hidden = !matches;
+          visible += Number(matches);
+        });
+        status.textContent = terms.length ? `${visible} of ${rows.length} essays` : `${rows.length} essays`;
+        empty.hidden = visible > 0;
+      }
+      search.addEventListener('input', filter);
+      document.getElementById('clear-search').addEventListener('click', () => { search.value = ''; filter(); search.focus(); });
+      filter();
+    })();
+  </script>
+</body>
+</html>

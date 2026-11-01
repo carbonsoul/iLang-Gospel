@@ -1,0 +1,76 @@
+name: Publish Gospel reading homepage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Prepare static homepage
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          touch _site/.nojekyll
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = []
+                  self.anchors = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if 'id' in attrs:
+                      self.ids.append(attrs['id'])
+                  if tag == 'a':
+                      self.anchors.append(attrs.get('href', ''))
+
+          page = Page()
+          page.feed(Path('_site/index.html').read_text())
+          assert len(page.ids) == len(set(page.ids)), 'Duplicate page IDs'
+          assert {'main', 'essays', 'reference', 'connect'} <= set(page.ids)
+          for href in page.anchors:
+              if href.startswith('#'):
+                  assert href[1:] in page.ids, f'Missing section: {href}'
+              prefix = 'https://github.com/carbonsoul/iLang-Gospel/blob/main/'
+              if href.startswith(prefix):
+                  assert Path(href.removeprefix(prefix)).is_file(), href
+          print('Static homepage and document targets validated')
+          PY
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      - name: Upload homepage
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: _site
+
+      - name: Deploy homepage
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
