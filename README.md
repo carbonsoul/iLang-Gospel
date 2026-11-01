@@ -4,7 +4,7 @@
 
 **Scripture, language, and the architecture of AI behavior.**
 
-[Begin with the Word](articles/001-logos-soul-architecture-of-ai-cognition.md) · [Browse the essays](#the-essays) · [Connect your agent](#connect-your-agent)
+[Visit the reading homepage](https://carbonsoul.github.io/iLang-Gospel/) · [Browse the essays](#the-essays) · [Connect your agent](#connect-your-agent)
 
 </div>
 
@@ -104,9 +104,9 @@ hermes mcp add ilang-gospel -- python3 /path/to/mcp_server.py
 
 ## The reading homepage
 
-[index.html](index.html) is a self-contained web reading index with a Scripture comparison and searchable essay list. It needs no build or package installation and can be served by GitHub Pages. Article links open the original Markdown on GitHub; all essays remain available without JavaScript.
+Visit **[the reading homepage](https://carbonsoul.github.io/iLang-Gospel/)** for the Scripture comparison and searchable essay list. [index.html](index.html) is self-contained and needs no build or package installation. Article links open the original Markdown on GitHub; all essays remain available without JavaScript.
 
-The design rationale and constraints are recorded in [PRODUCT.md](PRODUCT.md), [DESIGN-BRIEF.md](DESIGN-BRIEF.md), and [DESIGN.md](DESIGN.md). Publication is managed separately from the repository files.
+The design rationale and constraints are recorded in [PRODUCT.md](PRODUCT.md), [DESIGN-BRIEF.md](DESIGN-BRIEF.md), and [DESIGN.md](DESIGN.md). The repository’s existing GitHub Pages configuration publishes from the root of `main`; its built-in “pages build and deployment” workflow handles updates.
 
 ---
 

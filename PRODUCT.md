@@ -1,7 +1,7 @@
 # Product record
 
 ## Platform
-GitHub repository homepage and a static web reading index for GitHub Pages. The README remains the repository entry point. The owner subsequently requested publication; the Pages workflow deploys the self-contained web index from main, once GitHub Pages is enabled for Actions in the repository.
+GitHub repository homepage and a static web reading index for GitHub Pages. The README remains the repository entry point. The owner subsequently requested publication. The repository already publishes the root of main through GitHub's built-in “pages build and deployment” workflow; the self-contained index is included in that site.
 
 ## Stack
 Existing Python standard-library MCP server, Markdown essays, and Jekyll configuration. The reading index uses a single HTML file with CSS and progressive JavaScript. No build tools, external fonts, services, analytics, or package dependencies are required.
