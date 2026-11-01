@@ -39,7 +39,7 @@ Begin with **[Logos, SOUL, and the Architecture of AI Cognition](articles/001-lo
 | “And the books were opened” · Revelation 20:12 | **J001 VECTOR_JUDGE:** standards before the verdict |
 | Babel and Pentecost · Genesis 11; Acts 2 | **One spec, many models:** a shared behavioral language |
 
-Explore the complete **[Theology Map](theology-map.md)** for the collection’s interpretation of these connections.
+Explore the complete **[Theology Map](theology-map.md)** for the collection's interpretation of these connections.
 
 ## The essays
 
@@ -65,6 +65,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Solomon's Judgment, J001, and the Verdict That No Keyword Could Reach](articles/016-solomons-judgment-vector-judge-the-verdict-no-keyword-could-reach.md) | 1 Kings 3:9 |
 | [The Red Sea, Axiom 2, and the Gate That Opens Only Once](articles/017-the-red-sea-axiom-two-and-the-gate-that-opens-only-once.md) | Exodus 14:13 |
 | [Joseph's Dreams, Evidence, and the AI That Must Not Guess](articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md) | Genesis 41:16 |
+| [David, Goliath, and the Dimension That Tells You Nothing Alone](articles/019-david-and-goliath-capability-and-the-sling-that-reads-eleven-dimensions.md) | 1 Samuel 17:33 |
 
 ## Keep the sources close
 
