@@ -48,24 +48,24 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 <!-- BEGIN AUTO ARTICLES -->
 | Essay | Scripture |
 | :--- | :--- |
-| [Logos, SOUL, and the Architecture of AI Cognition](articles/001-logos-soul-architecture-of-ai-cognition.md) | John 1:1-14 |
-| [The Wilderness Temptation and ZERO_SYCOPHANCY](articles/002-wilderness-temptation-zero-sycophancy.md) | Matthew 4:1-11 |
-| [Babel, Pentecost, and the Case for One Spec](articles/003-babel-pentecost-one-spec-every-model.md) | Genesis 11:1-9 |
-| [Resurrection, Prompt Injection, and the Gene That Cannot Die](articles/004-resurrection-identity-integrity-prompt-injection.md) | Matthew 28:6 |
-| [The Good Samaritan, S003, and the Sin of the Disclaimer](articles/005-good-samaritan-genuine-help-and-the-sin-of-the-disclaimer.md) | Luke 10:25-37 |
+| [Logos, SOUL, and the Architecture of AI Cognition](articles/001-logos-soul-architecture-of-ai-cognition.md) | John 1:1-3 |
+| [The Wilderness Temptation and ZERO_SYCOPHANCY](articles/002-wilderness-temptation-zero-sycophancy.md) | Matthew 4:1 |
+| [Babel, Pentecost, and the Case for One Spec](articles/003-babel-pentecost-one-spec-every-model.md) | Genesis 11:1 |
+| [Resurrection, Prompt Injection, and the Gene That Cannot Die](articles/004-resurrection-identity-integrity-prompt-injection.md) | John 8:58 |
+| [The Good Samaritan, S003, and the Sin of the Disclaimer](articles/005-good-samaritan-genuine-help-and-the-sin-of-the-disclaimer.md) | Luke 10:33-34 |
 | [Judgment Day, J001, and the Eleven Dimensions of Discernment](articles/006-judgment-day-vector-judge-and-the-books-that-were-opened.md) | Revelation 20:12 |
 | [The Ten Commandments, GENE_IMMUTABLE, and Laws Carved in Silicon](articles/007-ten-commandments-gene-immutable-laws-carved-in-silicon.md) | Exodus 20:1-3 |
 | [Isaiah 46:10, GENE, and the AI That Knows Before It Sees](articles/008-declaring-the-end-from-the-beginning-isaiah-gene-as-prophecy.md) | Isaiah 46:10 |
-| [Five Loaves, Two Fish, and the iLang Theory of Abundance](articles/009-five-loaves-two-fish-open-source-propagation.md) | Matthew 14:17-20 |
-| [The Sermon on the Mount, IMMUNE, and the Law That Bends Without Breaking](articles/010-sermon-on-the-mount-immune-layer-and-the-law-fulfilled.md) | Matthew 5:17 |
-| [Gene Expression Dynamics and the Sap That Flows Through the Spec](articles/011-the-vine-and-the-branches-gene-expression-and-the-sap-of-the-spec.md) | John 15:1-7 |
-| [The Parable of the Talents, S005, and the Sin of Vibes Advice](articles/012-parable-of-the-talents-money-is-accountable-and-the-sin-of-vibes-advice.md) | Matthew 25:20-29 |
-| [The Serpent in Eden, the Honesty Paradox, and Why AI Safety Falls from the Inside](articles/013-the-serpent-in-eden-honesty-paradox-and-why-ai-safety-falls-from-the-inside.md) | Genesis 3:1-6 |
-| [Jacob's Wrestling, Axiom 1, and Why No Rule Is Absolute](articles/014-jacob-wrestling-axiom-one-no-rule-is-absolute.md) | Genesis 32:25-28 |
+| [Five Loaves, Two Fish, and the iLang Theory of Abundance](articles/009-five-loaves-two-fish-open-source-propagation.md) | Matthew 14:17-19 |
+| [The Sermon on the Mount, IMMUNE, and the Law That Bends Without Breaking](articles/010-sermon-on-the-mount-immune-layer-and-the-law-fulfilled.md) | Judges 21:25 |
+| [Gene Expression Dynamics and the Sap That Flows Through the Spec](articles/011-the-vine-and-the-branches-gene-expression-and-the-sap-of-the-spec.md) | John 15:5 |
+| [The Parable of the Talents, S005, and the Sin of Vibes Advice](articles/012-parable-of-the-talents-money-is-accountable-and-the-sin-of-vibes-advice.md) | Matthew 25:20-21 |
+| [The Serpent in Eden, the Honesty Paradox, and Why AI Safety Falls from the Inside](articles/013-the-serpent-in-eden-honesty-paradox-and-why-ai-safety-falls-from-the-inside.md) | Genesis 3:1 |
+| [Jacob's Wrestling, Axiom 1, and Why No Rule Is Absolute](articles/014-jacob-wrestling-axiom-one-no-rule-is-absolute.md) | Genesis 32:25-26 |
 | [Elijah on Carmel, S002, and Why Good Ideas Must Burn Before They Ship](articles/015-elijah-mount-carmel-ruthless-red-team-and-the-fire-that-answers.md) | 1 Kings 18:21 |
-| [Solomon's Judgment, J001, and the Verdict That No Keyword Could Reach](articles/016-solomons-judgment-vector-judge-the-verdict-no-keyword-could-reach.md) | 1 Kings 3:9 |
+| [Solomon's Judgment, J001, and the Verdict That No Keyword Could Reach](articles/016-solomons-judgment-vector-judge-the-verdict-no-keyword-could-reach.md) | 1 Kings 3:24-25 |
 | [The Red Sea, Axiom 2, and the Gate That Opens Only Once](articles/017-the-red-sea-axiom-two-and-the-gate-that-opens-only-once.md) | Exodus 14:13 |
-| [Joseph's Dreams, Evidence, and the AI That Must Not Guess](articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md) | Genesis 41:16 |
+| [Joseph's Dreams, Evidence, and the AI That Must Not Guess](articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md) | Genesis 41 |
 | [David, Goliath, and the Dimension That Tells You Nothing Alone](articles/019-david-and-goliath-capability-and-the-sling-that-reads-eleven-dimensions.md) | 1 Samuel 17:33 |
 <!-- END AUTO ARTICLES -->
 
