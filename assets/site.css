@@ -15,8 +15,8 @@
   /* Text */
   --text: #c9d1d9;
   --text-emphasis: #e6edf3;
-  --text-muted: #8b949e;
-  --text-subtle: #484f58;
+  --text-muted: #9aa4b0;
+  --text-subtle: #6e7681;
 
   /* Accent — warm gold, used sparingly */
   --accent: #d4a855;
@@ -132,6 +132,8 @@ a, h1, h2, h3, p, code { overflow-wrap: anywhere; }
 }
 .opening a { color: var(--text-muted); }
 .opening a:hover { color: var(--text-emphasis); }
+.opening .primary { color: var(--accent); }
+.opening .primary:hover { color: var(--accent-fg); background: var(--accent); }
 .opening :focus-visible { outline-color: var(--accent); }
 .opening ::selection { color: var(--bg); background: var(--accent); }
 
@@ -159,7 +161,7 @@ nav a {
 /* Hero — centered, monumental */
 .hero {
   text-align: center;
-  padding-block: clamp(5rem, 14vh, 11rem) clamp(4rem, 10vh, 8rem);
+  padding-block: clamp(5rem, 14vh, 11rem) clamp(5rem, 12vh, 9rem);
 }
 .hero h1 {
   max-width: 14ch;
@@ -422,15 +424,15 @@ footer {
 }
 .footer-content p {
   max-width: 40ch;
-  color: var(--text-subtle);
+  color: var(--text-muted);
   font-size: var(--text-sm);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .footer-content a { color: var(--text-muted); }
 .footer-content a:hover { color: var(--accent); }
 .footer-content nav { gap: var(--s4); }
-.footer-content small { color: var(--text-subtle); }
-.footer-content small a { color: var(--text-subtle); }
+.footer-content small { color: var(--text-muted); }
+.footer-content small a { color: var(--text-muted); }
 
 
 /* ─── Article / Reading View ─── */
