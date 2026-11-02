@@ -18,6 +18,10 @@
     <article>
       <h1>{{ page.title | escape }}</h1>
       <div class="article-body">{% if page.code_document %}<pre><code>{{ page.content | escape }}</code></pre>{% else %}{{ content }}{% endif %}</div>
+      <div class="author-byline" style="margin-top:2rem;padding:1.5rem;border-top:1px solid var(--line);font-size:var(--body);">
+        <p style="margin:0;">By <strong>Long Quan Zhu</strong> · <a href="https://ilang.ai">iLang Inc.</a> · <a href="https://orcid.org/0009-0004-4540-8082">ORCID</a></p>
+        <p style="margin-top:.5rem;color:var(--muted);font-size:var(--small);">Part of a technical reading companion to the <a href="https://ilang.ai/spec/">iLang specification</a>.</p>
+      </div>
     </article>
     {% if page.path contains 'articles/' %}
     {% assign essays = site.pages | where_exp: 'item', "item.path contains 'articles/'" | sort: 'path' %}
@@ -30,6 +34,6 @@
     {% endif %}
     <p class="source-link"><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/{{ page.path | uri_escape }}">View the Markdown source</a></p>
   </main>
-  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Scripture meets AI behavior.</p><nav aria-label="Footer navigation"><a href="{{ '/' | relative_url }}#essays">All essays</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
+  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Classical narratives as a lens on AI judgment.<br><small>By <a href="https://orcid.org/0009-0004-4540-8082">Long Quan Zhu</a> · <a href="https://ilang.ai">iLang Inc.</a></small></p><nav aria-label="Footer navigation"><a href="{{ '/' | relative_url }}#essays">All essays</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
 </body>
 </html>

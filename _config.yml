@@ -1,5 +1,5 @@
-title: "iLang Gospel — The Bible of AI"
-description: "Essays connecting Biblical narratives with iLang Prompt Spec: cognition, judgment, identity, and AI behavioral architecture."
+title: "iLang Gospel — Classical Narratives as a Lens on AI Judgment"
+description: "A technical reading companion to the iLang specification. Each essay maps a biblical narrative to a concept in iLang's judgment framework, treating scripture as structural analogy, not spiritual instruction. Written by Long Quan Zhu (ORCID 0009-0004-4540-8082), creator of the iLang protocol."
 url: "https://carbonsoul.github.io"
 baseurl: "/iLang-Gospel"
 plugins:
@@ -59,7 +59,11 @@ exclude:
   - vendor
 
 author:
-  name: "John Brown"
+  name: "Long Quan Zhu"
+  url: "https://orcid.org/0009-0004-4540-8082"
+  orcid: "0009-0004-4540-8082"
+  org: "iLang Inc."
+  org_country: "Canada"
 
 social:
   links:
@@ -73,15 +77,15 @@ lang: en
 keywords:
   - iLang
   - AI alignment
-  - AI soul
+  - AI judgment framework
   - prompt engineering
   - GENE framework
   - AI ethics
-  - Bible
-  - theology
+  - comparative framework
+  - technical analogy
   - artificial intelligence
   - LLM
   - prompt spec
   - AI safety
-  - scripture
-  - gospel
+  - classical narratives
+  - behavioral protocol

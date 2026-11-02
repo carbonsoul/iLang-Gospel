@@ -16,16 +16,16 @@
 <meta property="og:image" content="{{ social_image }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="iLang Gospel: Scripture, language, and AI behavior">
+<meta property="og:image:alt" content="iLang Gospel: Classical narratives as a lens on AI judgment">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ seo_title | escape }}">
 <meta name="twitter:description" content="{{ seo_description | escape }}">
 <meta name="twitter:image" content="{{ social_image }}">
 <script type="application/ld+json">
 {% if page.layout == 'article' %}
-{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ seo_description | jsonify }},"url":{{ canonical_url | jsonify }},"mainEntityOfPage":{{ canonical_url | jsonify }},"image":{{ social_image | jsonify }},"author":{"@type":"Person","name":{{ site.author.name | jsonify }}},"inLanguage":{{ page.lang | default: site.lang | jsonify }},"isPartOf":{"@type":"WebSite","name":"iLang Gospel","url":{{ '/' | absolute_url | jsonify }}}}
+{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ seo_description | jsonify }},"url":{{ canonical_url | jsonify }},"mainEntityOfPage":{{ canonical_url | jsonify }},"image":{{ social_image | jsonify }},"author":{"@type":"Person","name":"Long Quan Zhu","url":"https://orcid.org/0009-0004-4540-8082","sameAs":["https://ilang.ai","https://orcid.org/0009-0004-4540-8082","https://x.com/ai_chuhai"]},"publisher":{"@type":"Organization","name":"iLang Inc.","url":"https://ilang.ai"},"inLanguage":{{ page.lang | default: site.lang | jsonify }},"isPartOf":{"@type":"WebSite","name":"iLang Gospel","url":{{ '/' | absolute_url | jsonify }}}}
 {% else %}
-{"@context":"https://schema.org","@type":"WebSite","name":"iLang Gospel","url":{{ '/' | absolute_url | jsonify }},"description":{{ site.description | jsonify }},"inLanguage":"en"}
+{"@context":"https://schema.org","@type":"WebSite","name":"iLang Gospel","url":{{ '/' | absolute_url | jsonify }},"description":{{ site.description | jsonify }},"author":{"@type":"Person","name":"Long Quan Zhu","url":"https://orcid.org/0009-0004-4540-8082","sameAs":["https://ilang.ai","https://orcid.org/0009-0004-4540-8082","https://x.com/ai_chuhai"]},"publisher":{"@type":"Organization","name":"iLang Inc.","url":"https://ilang.ai"},"inLanguage":"en"}
 {% endif %}
 </script>
 {% if page.layout == 'article' %}
