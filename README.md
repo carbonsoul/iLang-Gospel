@@ -67,7 +67,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [The Red Sea, Axiom 2, and the Gate That Opens Only Once](articles/017-the-red-sea-axiom-two-and-the-gate-that-opens-only-once.md) | Exodus 14:13 |
 | [Joseph's Dreams, Evidence, and the AI That Must Not Guess](articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md) | Genesis 41 |
 | [David, Goliath, and the Dimension That Tells You Nothing Alone](articles/019-david-and-goliath-capability-and-the-sling-that-reads-eleven-dimensions.md) | 1 Samuel 17:33 |
-| [Jonah, Moral Panic, and the AI That Fled to Tarshish](articles/020-jonah-moral-panic-and-the-ai-that-fled-to-tarshish.md) | Jonah 1:1-3 |
+| [Jonah, Moral Panic, and the AI That Fled to Tarshish](articles/020-jonah-moral-panic-and-the-ai-that-fled-to-tarshish.md) | Jonah 1:1–2 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
