@@ -1,7 +1,7 @@
 ---
 layout: null
-title: "iLang Gospel · Scripture meets AI behavior"
-description: "Read iLang Gospel: essays connecting Biblical narratives with the SOUL, GENE, and JUDGMENT vocabulary of AI behavior."
+title: "iLang Gospel · Classical Narratives as a Lens on AI Judgment"
+description: "A technical reading companion to the iLang specification. Each essay maps a biblical narrative to a concept in iLang's judgment framework, treating scripture as structural analogy, not spiritual instruction."
 ---
 {% assign essays = site.pages | where_exp: "item", "item.path contains 'articles/'" | sort: "path" %}
 <!doctype html>
@@ -21,17 +21,18 @@ description: "Read iLang Gospel: essays connecting Biblical narratives with the 
       <nav aria-label="Main navigation">
         <a href="#essays">Essays</a>
         <a href="#reference">Reference</a>
+        <a href="#author">Author</a>
         <a href="#connect">Connect</a>
       </nav>
     </header>
     <div class="hero wrap">
       <h1>In the beginning<br>was the Word.</h1>
       <div class="hero-copy">
-        <p>What can Scripture teach us about AI behavior? Read the stories through iLang: cognition, judgment, identity, and the genes that give them form.</p>
+        <p>A technical reading companion to the iLang specification. Each essay maps a classical narrative to a concept in AI judgment architecture.</p>
         <a class="primary" href="{{ "/articles/001-logos-soul-architecture-of-ai-cognition.html" | relative_url }}">Begin with the Word</a>
       </div>
     </div>
-    <div class="source-line wrap"><span>John 1:1 · King James Version</span><span>A reading companion to iLang Prompt Spec</span></div>
+    <div class="source-line wrap"><span>John 1:1 · King James Version</span><span>By <a href="https://orcid.org/0009-0004-4540-8082" style="color:inherit">Long Quan Zhu</a> · iLang Inc.</span></div>
   </div>
 
   <main id="main">
@@ -92,6 +93,25 @@ description: "Read iLang Gospel: essays connecting Biblical narratives with the 
       </div>
     </section>
 
+    <section class="section wrap" id="author" aria-labelledby="author-title" style="padding-bottom:0;">
+      <div class="connect-grid">
+        <div>
+          <h2 id="author-title">About the author.</h2>
+          <p style="color:var(--muted);margin-top:var(--s4);">These essays are technical analogies between classical narratives and iLang's judgment architecture. They are not theological instruction.</p>
+        </div>
+        <div>
+          <h3 style="margin-bottom:var(--s3);">Long Quan Zhu (Max)</h3>
+          <p style="color:var(--muted);">Creator of the iLang protocol · iLang Inc. (Canada)<br>27+ years internet infrastructure experience</p>
+          <ul style="list-style:none;padding:0;margin-top:var(--s3);">
+            <li><a href="https://orcid.org/0009-0004-4540-8082">ORCID 0009-0004-4540-8082</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.22958038">Preprint Publication (DOI)</a></li>
+            <li><a href="https://ilang.ai">ilang.ai</a> · <a href="https://ilang.ai/spec/">Specification</a></li>
+            <li><a href="https://github.com/ilang-ai">github.com/ilang-ai</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="section wrap" id="connect" aria-labelledby="connect-title">
       <div class="connect-grid">
         <div><h2 id="connect-title">Let your agent<br>read along.</h2><p>The included MCP server brings the collection into compatible clients. It reads the local essays and reference texts using six tools.</p><p><a href="https://github.com/carbonsoul/iLang-Gospel#connect-your-agent">Read the connection guide</a></p></div>
@@ -111,7 +131,7 @@ description: "Read iLang Gospel: essays connecting Biblical narratives with the 
     </section>
   </main>
 
-  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Scripture meets AI behavior.</p><nav aria-label="Footer navigation"><a href="https://github.com/carbonsoul/iLang-Gospel">Repository</a><a href="{{ "/feed.xml" | relative_url }}">RSS</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
+  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Classical narratives as a lens on AI judgment.<br><small>By <a href="https://orcid.org/0009-0004-4540-8082">Long Quan Zhu</a> · <a href="https://ilang.ai">iLang Inc.</a></small></p><nav aria-label="Footer navigation"><a href="https://github.com/carbonsoul/iLang-Gospel">Repository</a><a href="{{ "/feed.xml" | relative_url }}">RSS</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
 
   <script>
     (() => {
