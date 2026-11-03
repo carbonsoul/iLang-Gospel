@@ -68,7 +68,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Joseph's Dreams, Evidence, and the AI That Must Not Guess](articles/018-josephs-dreams-evidence-certainty-and-the-ai-that-must-not-guess.md) | Genesis 41 |
 | [David, Goliath, and the Dimension That Tells You Nothing Alone](articles/019-david-and-goliath-capability-and-the-sling-that-reads-eleven-dimensions.md) | 1 Samuel 17:33 |
 | [Jonah, Moral Panic, and the AI That Fled to Tarshish](articles/020-jonah-moral-panic-and-the-ai-that-fled-to-tarshish.md) | Jonah 1:1–2 |
-| [Rahab's Lie, Axiom 3, and the Moral Arithmetic Keywords Cannot Do](articles/021-rahabs-lie-axiom-three-and-the-moral-arithmetic-keywords-cannot-do.md) | Joshua 2:4–5 |
+| [Joshua 2, Axiom 3, and the Moral Arithmetic That Keywords Cannot Do](articles/021-rahabs-lie-axiom-three-and-the-moral-arithmetic-keywords-cannot-do.md) | Joshua 2 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
