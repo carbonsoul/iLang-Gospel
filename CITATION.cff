@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+title: "iLang Gospel — Classical Narratives as a Lens on AI Judgment"
+message: "If you use or reference this work, please cite it as below."
+type: dataset
+authors:
+  - family-names: Zhu
+    given-names: Long Quan
+    orcid: "https://orcid.org/0009-0004-4540-8082"
+    affiliation: "iLang Inc."
+repository-code: "https://github.com/carbonsoul/iLang-Gospel"
+url: "https://carbonsoul.github.io/iLang-Gospel/"
+abstract: >-
+  A technical reading companion to the iLang specification.
+  Each essay maps a biblical narrative to a concept in
+  iLang's judgment framework, treating scripture as
+  structural analogy for AI behavioral architecture.
+keywords:
+  - iLang
+  - AI judgment
+  - biblical hermeneutics
+  - computational theology
+  - technical analogy
+license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21871163"
+    description: "iLang Prompt Spec canonical DOI"
+  - type: doi
+    value: "10.5281/zenodo.22958038"
+    description: "iLang preprint DOI"
+references:
+  - type: article
+    title: "Artificial Intelligence's Understanding of Religion"
+    doi: "10.3390/rel15030375"
+  - type: article
+    title: "Machine Intelligence, AGI, Super-Intelligence, and Humanity"
+    doi: "10.3390/rel16080975"
+  - type: article
+    title: "Towards a Socio-Theological Evaluation of AI"
+    doi: "10.3390/rel16111372"
+  - type: conference-paper
+    title: "BibCrit: AI-Assisted Biblical Textual Criticism"
+    doi: "10.5281/zenodo.20495162"

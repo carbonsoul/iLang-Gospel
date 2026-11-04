@@ -1,0 +1,39 @@
+{
+  "title": "iLang Gospel — Classical Narratives as a Lens on AI Judgment",
+  "description": "A technical reading companion to the iLang specification. Each essay maps a biblical narrative to a concept in iLang's judgment framework, treating scripture as structural analogy for AI behavioral architecture. Written by Long Quan Zhu (ORCID 0009-0004-4540-8082), creator of the iLang protocol.",
+  "creators": [
+    {
+      "name": "Zhu, Long Quan",
+      "affiliation": "iLang Inc.",
+      "orcid": "0009-0004-4540-8082"
+    }
+  ],
+  "keywords": [
+    "iLang",
+    "AI judgment framework",
+    "biblical hermeneutics",
+    "technical analogy",
+    "computational theology",
+    "AI behavioral architecture",
+    "structured prompt specification"
+  ],
+  "license": "MIT",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "access_right": "open",
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.21871163", "relation": "isPartOf", "resource_type": "publication-preprint", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.22958038", "relation": "isSupplementTo", "resource_type": "publication-preprint", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.22864826", "relation": "isSupplementTo", "resource_type": "publication-technicalnote", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.22866168", "relation": "isSupplementTo", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.2611150", "relation": "isDerivedFrom", "resource_type": "publication-thesis", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.3719091", "relation": "isDerivedFrom", "resource_type": "publication-conferencepaper", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.20495162", "relation": "references", "resource_type": "publication-conferencepaper", "scheme": "doi"},
+    {"identifier": "10.3390/rel15030375", "relation": "cites", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "10.3390/rel16080975", "relation": "cites", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "10.3390/rel16111372", "relation": "cites", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "10.5040/9798765163443.0016", "relation": "cites", "resource_type": "publication-section", "scheme": "doi"},
+    {"identifier": "10.1177/00209643241308539", "relation": "cites", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "https://carbonsoul.github.io/iLang-Gospel/", "relation": "isSupplementedBy", "resource_type": "other", "scheme": "url"}
+  ]
+}
