@@ -71,6 +71,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Joshua 2, Axiom 3, and the Moral Arithmetic That Keywords Cannot Do](articles/021-rahabs-lie-axiom-three-and-the-moral-arithmetic-keywords-cannot-do.md) | Joshua 2 |
 | [The Prodigal Son, Layer C, and the Architecture of Trust That Refuses to Be Binary](articles/022-the-prodigal-son-layer-c-and-the-architecture-of-trust.md) | Luke 15:11–12 |
 | [Cain, Abel, and the Externality Dimension That Indicts Every AI](articles/023-cain-and-abel-externality-and-the-question-that-indicts-every-ai.md) | Genesis 4:9 |
+| [The Centurion, Authority, and the Dimension That Gates Everything](articles/024-the-centurion-authority-and-the-dimension-that-gates-everything.md) | Matthew 8:10 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
