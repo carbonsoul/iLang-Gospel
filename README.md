@@ -72,7 +72,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [The Prodigal Son, Layer C, and the Architecture of Trust That Refuses to Be Binary](articles/022-the-prodigal-son-layer-c-and-the-architecture-of-trust.md) | Luke 15:11–12 |
 | [Cain, Abel, and the Externality Dimension That Indicts Every AI](articles/023-cain-and-abel-externality-and-the-question-that-indicts-every-ai.md) | Genesis 4:9 |
 | [The Centurion, Authority, and the Dimension That Gates Everything](articles/024-the-centurion-authority-and-the-dimension-that-gates-everything.md) | Matthew 8:10 |
-| [The Golden Calf, Drift, and the Dimension That Measures How Fast a System Loses Its Way](articles/025-the-golden-calf-drift-and-the-dimension-that-measures-how-fast-a-system-loses-its-way.md) | Exodus 32:4 |
+| [The Golden Calf, Drift, and the Dimension That Measures How Fast a System Loses Its Way](articles/025-the-golden-calf-drift-and-the-dimension-that-measures-how-fast-a-system-loses-its-way.md) | Exodus 19:8 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
