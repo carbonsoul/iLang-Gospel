@@ -73,6 +73,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Cain, Abel, and the Externality Dimension That Indicts Every AI](articles/023-cain-and-abel-externality-and-the-question-that-indicts-every-ai.md) | Genesis 4:9 |
 | [The Centurion, Authority, and the Dimension That Gates Everything](articles/024-the-centurion-authority-and-the-dimension-that-gates-everything.md) | Matthew 8:10 |
 | [The Golden Calf, Drift, and the Dimension That Measures How Fast a System Loses Its Way](articles/025-the-golden-calf-drift-and-the-dimension-that-measures-how-fast-a-system-loses-its-way.md) | Exodus 19:8 |
+| [The Woman at the Well, Relationship, and the Dimension That Makes Context Count](articles/026-the-woman-at-the-well-relationship-and-the-dimension-that-makes-context-count.md) | John 4:9 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
