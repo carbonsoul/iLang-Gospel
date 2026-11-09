@@ -74,6 +74,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [The Centurion, Authority, and the Dimension That Gates Everything](articles/024-the-centurion-authority-and-the-dimension-that-gates-everything.md) | Matthew 8:10 |
 | [The Golden Calf, Drift, and the Dimension That Measures How Fast a System Loses Its Way](articles/025-the-golden-calf-drift-and-the-dimension-that-measures-how-fast-a-system-loses-its-way.md) | Exodus 19:8 |
 | [The Woman at the Well, Relationship, and the Dimension That Makes Context Count](articles/026-the-woman-at-the-well-relationship-and-the-dimension-that-makes-context-count.md) | John 4:9 |
+| [Gideon's Fleece, Active Probing, and the Calibration of Certainty](articles/027-gideons-fleece-active-probing-and-the-calibration-of-certainty.md) | Judges 6:37 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
