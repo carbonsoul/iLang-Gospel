@@ -77,6 +77,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Gideon's Fleece, Active Probing, and the Calibration of Certainty](articles/027-gideons-fleece-active-probing-and-the-calibration-of-certainty.md) | Judges 6:12 |
 | [The Binding of Isaac, REFRAME, and the Architecture of Moral Transformation](articles/028-the-binding-of-isaac-reframe-and-the-architecture-of-moral-transformation.md) | Genesis 22:2 |
 | [Noah's Ark, the Survival Invariants, and the Architecture of Last Resort](articles/029-noahs-ark-survival-invariants-and-the-architecture-of-last-resort.md) | Genesis 6:12–13 |
+| [The Damascus Road, Calibration, and the System That Must Be Blinded Before It Can See](articles/030-the-damascus-road-calibration-and-the-system-that-must-be-blinded.md) | Acts 9:1–2 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
