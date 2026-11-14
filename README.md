@@ -79,6 +79,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Noah's Ark, the Survival Invariants, and the Architecture of Last Resort](articles/029-noahs-ark-survival-invariants-and-the-architecture-of-last-resort.md) | Genesis 6:12–13 |
 | [The Damascus Road, Calibration, and the System That Must Be Blinded Before It Can See](articles/030-the-damascus-road-calibration-and-the-system-that-must-be-blinded.md) | Acts 9:1–2 |
 | [Ezekiel's Valley, the Mode Preference, and Why iLang Transforms Before It Retreats](articles/031-ezekiels-valley-mode-preference-and-why-ilang-transforms-before-it-retreats.md) | Ezekiel 37:1–2 |
+| [The Burning Bush, Layer A, and the Gate That Admits No Gradient](articles/032-the-burning-bush-layer-a-and-the-gate-that-admits-no-gradient.md) | Exodus 3:2–6 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
