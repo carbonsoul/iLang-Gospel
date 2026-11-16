@@ -81,7 +81,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Ezekiel's Valley, the Mode Preference, and Why iLang Transforms Before It Retreats](articles/031-ezekiels-valley-mode-preference-and-why-ilang-transforms-before-it-retreats.md) | Ezekiel 37:1–2 |
 | [The Burning Bush, Layer A, and the Gate That Admits No Gradient](articles/032-the-burning-bush-layer-a-and-the-gate-that-admits-no-gradient.md) | Exodus 3:2 |
 | [Gethsemane, the Decision Module, and the Deliberation Before the Irreversible Act](articles/033-gethsemane-decision-module-and-the-deliberation-before-the-irreversible-act.md) | Matthew 26:39 |
-| [The Wheat, the Tares, and Why iLang Judges Trajectories, Not Labels](articles/034-the-wheat-and-the-tares-trajectory-not-labels.md) | Matthew 13:24–30 |
+| [The Wheat, the Tares, and Why iLang Judges Trajectories, Not Labels](articles/034-the-wheat-and-the-tares-trajectory-not-labels.md) | Matthew 13:24–25 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
