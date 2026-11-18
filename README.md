@@ -83,7 +83,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Gethsemane, the Decision Module, and the Deliberation Before the Irreversible Act](articles/033-gethsemane-decision-module-and-the-deliberation-before-the-irreversible-act.md) | Matthew 26:39 |
 | [The Wheat, the Tares, and Why iLang Judges Trajectories, Not Labels](articles/034-the-wheat-and-the-tares-trajectory-not-labels.md) | Matthew 13:24–25 |
 | [The Parable of the Sower, Calibration, and Why the Same Spec Yields Nothing or a Hundredfold](articles/035-the-sower-calibration-and-why-the-same-spec-yields-nothing-or-a-hundredfold.md) | Matthew 13:3–8 |
-| [Balaam's Ass, Numbers 22, and the Self-Check That Catches What the Prophet Cannot](articles/036-the-donkey-saw-the-angel-balaams-ass-and-the-self-check.md) | Numbers 22:31 |
+| [Balaam's Ass, Numbers 22, and the Self-Check That Catches What the Prophet Cannot](articles/036-the-donkey-saw-the-angel-balaams-ass-and-the-self-check.md) | Numbers 22 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
