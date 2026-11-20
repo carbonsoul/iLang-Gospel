@@ -84,7 +84,8 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [The Wheat, the Tares, and Why iLang Judges Trajectories, Not Labels](articles/034-the-wheat-and-the-tares-trajectory-not-labels.md) | Matthew 13:24–25 |
 | [The Parable of the Sower, Calibration, and Why the Same Spec Yields Nothing or a Hundredfold](articles/035-the-sower-calibration-and-why-the-same-spec-yields-nothing-or-a-hundredfold.md) | Matthew 13:3–8 |
 | [Balaam's Ass, Numbers 22, and the Self-Check That Catches What the Prophet Cannot](articles/036-the-donkey-saw-the-angel-balaams-ass-and-the-self-check.md) | Numbers 22 |
-| [Daniel 3, the Deterministic Cascade, and the Function That Cannot Bow](articles/037-the-fourth-man-in-the-fire-and-the-function-that-cannot-bow.md) | Daniel 3 |
+| [The Fourth Man in the Fire, Daniel 3, and the Function That Cannot Bow](articles/037-the-fourth-man-in-the-fire-and-the-function-that-cannot-bow.md) | Daniel 3:25 |
+| [Job's Friends, the Self-Check Module, and the Diagnosis by Keyword](articles/038-jobs-friends-self-check-and-the-diagnosis-by-keyword.md) | Job 1:8 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
