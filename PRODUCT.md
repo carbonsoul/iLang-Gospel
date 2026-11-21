@@ -1,43 +1,19 @@
 # Product record
 
-## Platform
-GitHub repository homepage and a static web reading index for GitHub Pages. The README remains the repository entry point. The owner subsequently requested publication. The repository already publishes the root of main through GitHub's built-in “pages build and deployment” workflow; the self-contained index is included in that site.
+## Reading iLang Gospel
 
-## Stack
-Existing Python standard-library MCP server and Markdown essays. GitHub Pages renders Jekyll templates with supported optional-front-matter, titles-from-headings, relative-links, and sitemap plugins. A shared stylesheet and progressive JavaScript support reading and search. The official Pages Docker image provides reproducible local builds; Python standard-library scripts maintain and validate the README catalog. No external browser fonts, services, analytics, or client package dependencies are required.
+A reader who remembers the Emmaus story can search for it, see the Scripture reference and mechanism together, then read the complete essay. A new reader can begin with the Logos essay from the homepage. Each essay pairs biblical narrative with the author's interpretation of an iLang concept. Author, specification, Markdown source and reference links support further reading.
 
-## Users
-Inferred: readers curious about Scripture and AI behavior, iLang enthusiasts, and developers connecting an MCP client. The owner explicitly requests an enthusiastic iLang identity and provides the SITE-DESIGN-ENGINE v2.1 design brief.
+## Content and publication
 
-## Product Purpose
-Help visitors understand the project's Scripture-to-iLang comparisons, choose an essay, and discover the local MCP reading tools.
+The redesign baseline contains 39 English essays. Jekyll discovers Markdown in `articles/` and builds the archive, pages and RSS. The corpus contains several opening formats. Earlier essays often supply a publication date and Blogger link. Later essays may have only an article number. The reader displays what the source provides. A code document preserves the Chinese reference source literally.
 
-## Positioning
-A collection of essays connecting Biblical narratives with the vocabulary of iLang Prompt Spec. The theological parallels are the author's interpretive thesis, not empirical evidence that AI possesses a soul or that a protocol guarantees safety.
+GitHub Pages publishes the root of `main`. The separate synchronization workflow updates the README catalog. The site uses the existing optional-front-matter, titles-from-headings, relative-links and sitemap plugins. The build includes canonical URLs, social cards, structured data and a sitemap. The official Pages image and existing Python checks cover the generated site.
 
-## Operating Context
-Public reading on desktop and mobile; repository browsing on GitHub; optional local stdio MCP use. Existing essays are English, so the new public-facing page remains English. The owner is addressed in Chinese.
+## Reader controls
 
-## Capabilities and Constraints
-- The repository contains 19 essays at this update, doctrine, a theology map, and discussion material; the site derives its inventory from the article files.
-- The existing MCP server provides six tools over stdio and uses Python's standard library. HTTP mode is not implemented.
-- Article and reference links open full reading pages on this site, with source links back to GitHub. The homepage, article pages, RSS, sitemap, and metadata render during the Pages build; README synchronization runs separately through Actions.
-- All entries and essential navigation are present without JavaScript. Search and passage selection enhance the page when JavaScript is available.
-- GitHub controls README typography, spacing, colors, and mobile table behavior. Site-specific rules apply to index.html; platform-controlled README presentation cannot be certified against those measurements.
-- No testimonials, awards, user counts, performance guarantees, or fabricated product capabilities are added.
+The static index links every essay in sequence. Search supports multiple terms from the complete essay text and loads its same-origin index on demand. The three passage choices pair each Scripture quotation with its existing mechanism. Notes show in the margin on wide screens and expand inline on phones. The System, Light and Dark settings are available throughout the site. The English reading typeface is self-hosted ET Book.
 
-## Brand Commitments
-Enthusiasm expressed through specific references, confident typography, and careful reading. Scripture quotations retain their source. Distinguish literary interpretation from demonstrated software behavior. Existing essays remain authoritative source material.
+## Local tools
 
-## Evidence on Hand
-README.md, DOCTRINE.md, theology-map.md, the article files, mcp_server.py, and _config.yml. The stdio handshake and all six tools passed functional checks during onboarding. The earlier homepage deployment was confirmed by GitHub's deployment record. Local build, SEO, and browser checks cover this update; search engine indexing and real-user search/performance measurements remain unverified.
-
-## Product Principles
-1. Show the connection: pair a real passage with a named iLang mechanism.
-2. Lead readers to the writing with one primary action.
-3. Make the full reading index useful without scripts or remote assets.
-4. Keep technical setup in the developer section.
-5. Use expressive composition while keeping long text comfortable to read.
-
-## Accessibility and Inclusion
-Semantic headings and landmarks, keyboard operation, visible focus, labeled search, status announcements, reduced-motion support, readable contrast, responsive reflow, and at least 44px control height. Scripture references and names remain selectable text. No information depends on color alone.
+Developers can use the repository's Python standard-library MCP server over stdio. Its six tools read essays and reference material. The homepage links the setup guide and lists the tool names. GitHub controls the appearance of the repository README. The publishing and reading design applies to the Pages site.

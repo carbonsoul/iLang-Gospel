@@ -1,48 +1,105 @@
+{%- assign is_essay = false -%}
+{%- if page.path contains 'articles/' -%}
+  {%- assign is_essay = true -%}
+  {%- assign essay_number = page.path | split: '/' | last | split: '-' | first -%}
+{%- endif -%}
+{%- assign reading_content = content | strip -%}
+{%- assign initial_table = reading_content | split: '</table>' | first -%}
+{%- assign cells = initial_table | split: '<td>' -%}
+{%- assign opening_tag = reading_content | slice: 0, 7 -%}
+{%- comment -%}Kramdown turns the pipe-separated publication line into a table. Only unwrap that exact record.{%- endcomment -%}
+{%- assign first_cell = cells[1] | split: '</td>' | first | strip -%}
+{%- assign second_cell = cells[2] | split: '</td>' | first | strip -%}
+{%- assign first_char = first_cell | slice: 0, 1 -%}
+{%- assign last_char = second_cell | slice: -1, 1 -%}
+{%- if is_essay and opening_tag == '<table>' and cells[1] contains '*Published:' and cells[2] contains 'Read on Blogger</a>' -%}
+  {%- assign publication = cells[1] | split: '</td>' | first | remove_first: '*' | strip -%}
+  {%- assign blogger_link = cells[2] | split: '</a>' | first | append: '</a>' -%}
+  {%- capture table_markup -%}{{ initial_table }}</table>{%- endcapture -%}
+  {%- assign reading_content = reading_content | remove_first: table_markup | strip -%}
+{%- elsif is_essay and opening_tag == '<table>' and cells.size == 3 and first_char == '*' and last_char == '*' -%}
+  {%- comment -%}A similar two-cell italic subtitle can describe the reading instead of a publication.{%- endcomment -%}
+  {%- assign last_index = second_cell.size | minus: 1 -%}
+  {%- capture reading_subject -%}{{ first_cell | remove_first: '*' }} | {{ second_cell | slice: 0, last_index }}{%- endcapture -%}
+  {%- capture table_markup -%}{{ initial_table }}</table>{%- endcapture -%}
+  {%- assign reading_content = reading_content | remove_first: table_markup | strip -%}
+{%- endif -%}
+{%- capture serial_line -%}<p><em>iLang Gospel — Article {{ essay_number }}</em></p>{%- endcapture -%}
+{%- assign opening_serial = reading_content | slice: 0, serial_line.size -%}
+{%- if is_essay and opening_serial == serial_line -%}
+  {%- assign serial = opening_serial | strip_html -%}
+  {%- assign reading_content = reading_content | remove_first: serial_line | strip -%}
+{%- endif -%}
+{%- assign sections = reading_content | split: '<h2 id="' -%}
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
   {% include seo.html %}
-  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
-
-    <!-- Highwire Press per-article citation metadata -->
-    <meta name="citation_author" content="Long Quan Zhu">
-    <meta name="citation_author_institution" content="iLang Inc.">
-    <meta name="citation_author_orcid" content="0009-0004-4540-8082">
-    <meta name="citation_publication_date" content="2026">
-    <meta name="citation_language" content="en">
-    <meta name="citation_reference" content="citation_title=Artificial Intelligence's Understanding of Religion; citation_doi=10.3390/rel15030375; citation_journal_title=Religions">
-    <meta name="citation_reference" content="citation_title=Machine Intelligence, AGI, Super-Intelligence; citation_doi=10.3390/rel16080975; citation_journal_title=Religions">
-    <meta name="citation_reference" content="citation_title=Socio-Theological Evaluation of AI; citation_doi=10.3390/rel16111372; citation_journal_title=Religions">
-  </head>
+  {% include book-head.html %}
+  <link rel="stylesheet" href="{{ '/assets/reader.css' | relative_url }}">
+  <script src="{{ '/assets/reader.js' | relative_url }}" defer></script>
+  <meta name="citation_author" content="Long Quan Zhu">
+  <meta name="citation_author_institution" content="iLang Inc.">
+  <meta name="citation_author_orcid" content="0009-0004-4540-8082">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_language" content="en">
+  <meta name="citation_reference" content="citation_title=Artificial Intelligence's Understanding of Religion; citation_doi=10.3390/rel15030375; citation_journal_title=Religions">
+  <meta name="citation_reference" content="citation_title=Machine Intelligence, AGI, Super-Intelligence; citation_doi=10.3390/rel16080975; citation_journal_title=Religions">
+  <meta name="citation_reference" content="citation_title=Socio-Theological Evaluation of AI; citation_doi=10.3390/rel16111372; citation_journal_title=Religions">
+</head>
 <body>
   <a class="skip" href="#main">Skip to article</a>
-  <header class="opening"><div class="masthead wrap">
-    <a class="brand" href="{{ '/' | relative_url }}">iLang Gospel</a>
-    <nav aria-label="Main navigation"><a href="{{ '/' | relative_url }}#essays">All essays</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="{{ '/' | relative_url }}#connect">Connect</a></nav>
-  </div></header>
+  {% include masthead.html %}
   <main id="main" class="reading wrap">
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Reading</span></nav>
+    <nav class="reader-crumb" aria-label="Breadcrumb">
+      {% if is_essay %}<a href="{{ '/' | relative_url }}#essays">All essays</a><span aria-hidden="true">/</span><span>{% if serial %}<em>{{ serial | escape }}</em>{% else %}Essay {{ essay_number }}{% endif %}</span>
+      {% else %}<a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Reference</span>{% endif %}
+    </nav>
     <article>
-      <h1>{{ page.title | escape }}</h1>
-      <div class="article-body">{% if page.code_document %}<pre><code>{{ page.content | escape }}</code></pre>{% else %}{{ content }}{% endif %}</div>
-      <div class="author-byline">
+      <header class="reader-heading">
+        <div>
+          {% assign title_parts = page.title | split: ' — ' %}
+          <h1>{% if is_essay and title_parts.size > 1 %}{{ title_parts | first | escape }}<span class="reader-subtitle"><span class="reader-separator"> — </span>{{ page.title | remove_first: title_parts.first | remove_first: ' — ' | escape }}</span>{% else %}{{ page.title | escape }}{% endif %}</h1>
+          {% if reading_subject %}<p class="reader-record"><em>{{ reading_subject }}</em></p>{% endif %}
+          {% if publication and cells.size > 3 %}
+          <p class="reader-record">{% for cell in cells offset:3 %}{{ cell | split: '</td>' | first | strip_html | escape_once }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+          {% endif %}
+        </div>
+        {% if publication or sections.size > 2 and page.code_document != true %}
+        <div class="reader-apparatus">
+          {% if publication %}<p class="reader-edition">{{ publication | escape_once }}<br>{{ blogger_link }}</p>{% endif %}
+          {% if sections.size > 2 and page.code_document != true %}
+          <nav aria-label="Table of contents"><details class="reader-toc">
+            <summary>On this page</summary>
+            <ol>{% for section in sections offset:1 %}
+              {% assign anchor = section | split: '"' | first %}
+              {% assign heading_prefix = anchor | append: '">' %}
+              {% assign heading = section | split: '</h2>' | first | remove_first: heading_prefix | strip_html %}
+              <li><a href="#{{ anchor | escape_once }}">{{ heading | escape_once }}</a></li>
+            {% endfor %}</ol>
+          </details></nav>
+          {% endif %}
+        </div>
+        {% endif %}
+      </header>
+      <div class="article-body">{% if page.code_document %}<pre class="reader-document" tabindex="0"><code>{{ page.content | escape }}</code></pre>{% else %}{{ reading_content | replace: '<pre class="highlight">', '<pre class="highlight" tabindex="0">' | replace: '<pre>', '<pre tabindex="0">' }}{% endif %}</div>
+      <div class="reader-colophon">
         <p>By <strong>Long Quan Zhu</strong> · <a href="https://ilang.ai">iLang Inc.</a> · <a href="https://orcid.org/0009-0004-4540-8082">ORCID</a></p>
-        <p class="byline-sub">Part of a technical reading companion to the <a href="https://ilang.ai/spec/">iLang specification</a>.</p>
+        <p>Part of a technical reading companion to the <a href="https://ilang.ai/spec/">iLang specification</a>.</p>
+        <p><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/{{ page.path | uri_escape }}">View the Markdown source</a></p>
       </div>
     </article>
-    {% if page.path contains 'articles/' %}
+    {% if is_essay %}
     {% assign essays = site.pages | where_exp: 'item', "item.path contains 'articles/'" | sort: 'path' %}
     <nav class="reading-next" aria-label="More essays">
     {% for essay in essays %}{% if essay.url == page.url %}
-      {% unless forloop.first %}{% assign previous_index = forloop.index0 | minus: 1 %}{% assign previous = essays[previous_index] %}<a rel="prev" href="{{ previous.url | relative_url }}">Previous essay: {{ previous.title | split: ' — ' | last | escape }}</a>{% endunless %}
-      {% unless forloop.last %}{% assign next_index = forloop.index0 | plus: 1 %}{% assign next = essays[next_index] %}<a rel="next" href="{{ next.url | relative_url }}">Next essay: {{ next.title | split: ' — ' | last | escape }}</a>{% endunless %}
+      {% unless forloop.first %}{% assign previous_index = forloop.index0 | minus: 1 %}{% assign previous = essays[previous_index] %}<a rel="prev" href="{{ previous.url | relative_url }}"><span>Previous essay</span>{{ previous.title | split: ' — ' | last | escape }}</a>{% endunless %}
+      {% unless forloop.last %}{% assign next_index = forloop.index0 | plus: 1 %}{% assign next = essays[next_index] %}<a rel="next" href="{{ next.url | relative_url }}"><span>Next essay</span>{{ next.title | split: ' — ' | last | escape }}</a>{% endunless %}
     {% endif %}{% endfor %}
     </nav>
     {% endif %}
-    <p class="source-link"><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/{{ page.path | uri_escape }}">View the Markdown source</a></p>
   </main>
   <footer><div class="footer-content wrap"><p>iLang Gospel<br>Classical narratives as a lens on AI judgment.<br><small>By <a href="https://orcid.org/0009-0004-4540-8082">Long Quan Zhu</a> · <a href="https://ilang.ai">iLang Inc.</a></small></p><nav aria-label="Footer navigation"><a href="{{ '/' | relative_url }}#essays">All essays</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
 </body>

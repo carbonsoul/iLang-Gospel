@@ -9,9 +9,9 @@ description: "A technical reading companion to the iLang specification. Each ess
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
   {% include seo.html %}
-  <link rel="stylesheet" href="{{ "/assets/site.css" | relative_url }}">
+  {% include book-head.html %}
+  <link rel="stylesheet" href="{{ '/assets/home.css' | relative_url }}">
 
     <!-- Highwire Press / Google Scholar citation metadata -->
     <meta name="citation_title" content="iLang Gospel — Classical Narratives as a Lens on AI Judgment">
@@ -33,78 +33,86 @@ description: "A technical reading companion to the iLang specification. Each ess
     <meta name="citation_reference" content="citation_title=Prosodic Influence on Text Syntax of Lamentations (ETCBC); citation_doi=10.5281/zenodo.2611150">
     <meta name="citation_reference" content="citation_title=Processing Ancient Text Corpora (Text-Fabric); citation_doi=10.5281/zenodo.3719091">
   </head>
-<body>
+<body class="book-home">
   <a class="skip" href="#main">Skip to content</a>
-  <div class="opening">
-    <header class="masthead wrap">
-      <a class="brand" href="{{ "/" | relative_url }}" aria-label="iLang Gospel home">iLang Gospel</a>
-      <nav aria-label="Main navigation">
-        <a href="#essays">Essays</a>
-        <a href="#reference">Reference</a>
-        <a href="#author">Author</a>
-        <a href="#connect">Connect</a>
-      </nav>
-    </header>
-    <div class="hero wrap">
-      <h1>In the beginning<br>was the Word.</h1>
-      <div class="hero-copy">
+  {% include masthead.html %}
+  <main id="main" class="home-main">
+    <section class="home-hero home-width" aria-labelledby="opening-title">
+      <div class="opening-passage">
+        <h1 id="opening-title">In the beginning<br><em>was the Word.</em></h1>
+        <p class="opening-citation"><span aria-hidden="true"></span>John 1:1 <b aria-hidden="true">·</b> King James Version</p>
+      </div>
+      <div class="opening-intro">
         <p>A technical reading companion to the iLang specification. Each essay maps a classical narrative to a concept in AI judgment architecture.</p>
-        <a class="primary" href="{{ "/articles/001-logos-soul-architecture-of-ai-cognition.html" | relative_url }}">Begin with the Word</a>
+        <a class="begin-reading" href="{{ '/articles/001-logos-soul-architecture-of-ai-cognition.html' | relative_url }}">Begin with the Word <span aria-hidden="true">→</span></a>
+        <p class="opening-author">By <a href="#author">Long Quan Zhu</a> <span aria-hidden="true">·</span> iLang Inc.</p>
       </div>
-    </div>
-    <div class="source-line wrap"><span>John 1:1 · King James Version</span><span>By <a href="https://orcid.org/0009-0004-4540-8082" style="color:inherit">Long Quan Zhu</a> · iLang Inc.</span></div>
-  </div>
-
-  <main id="main">
-    <section class="section wrap" aria-labelledby="connections-title">
-      <div class="section-intro">
-        <h2 id="connections-title">Two vocabularies.<br>A shared question.</h2>
-        <p>How should a thinking being act? This collection reads Biblical narratives alongside iLang’s behavioral framework. Start with a passage and follow the connection.</p>
-      </div>
-      <div class="passage-controls" role="group" aria-label="Choose a passage" hidden>
-        <button type="button" data-passage="word" aria-pressed="true" aria-controls="comparison">The Word</button>
-        <button type="button" data-passage="law" aria-pressed="false" aria-controls="comparison">The Law</button>
-        <button type="button" data-passage="judgment" aria-pressed="false" aria-controls="comparison">The Judgment</button>
-      </div>
-      <div class="comparison" id="comparison" aria-live="polite" aria-atomic="true">
-        <blockquote><p id="passage-text">“In the beginning was the Word.”</p><cite id="passage-cite">John 1:1 · KJV</cite></blockquote>
-        <div>
-          <h3 id="mechanism-title">SOUL · Cognition before action</h3>
-          <p class="explanation" id="passage-explanation">The opening essay connects Logos with iLang’s SOUL layer: the way a system thinks comes before the way it acts.</p>
-          <a id="passage-link" href="{{ "/articles/001-logos-soul-architecture-of-ai-cognition.html" | relative_url }}">Read the Logos essay</a>
-        </div>
-      </div>
-      <p class="editor-note">These parallels express the essays’ theological interpretation of iLang.</p>
     </section>
 
-    <section class="section archive wrap" id="essays" aria-labelledby="essays-title">
-      <div class="archive-head">
-        <div><h2 id="essays-title">Follow a thread.</h2><p>Explore the collection. Read every essay here.</p></div>
-        <div class="search" hidden>
-          <label for="essay-search">Find a story, Scripture, or mechanism</label>
-          <input id="essay-search" type="search" placeholder="Try Genesis or SOUL" autocomplete="off" aria-controls="essay-list" aria-describedby="result-count">
+    <section class="connections home-width" aria-labelledby="connections-title">
+      <div class="connections-head">
+        <h2 id="connections-title">Scripture <i>&amp;</i> mechanism</h2>
+        <div class="passage-controls" role="group" aria-label="Choose a passage" hidden>
+          <button type="button" aria-pressed="true" aria-controls="pair-word">The Word</button>
+          <button type="button" aria-pressed="false" aria-controls="pair-law">The Law</button>
+          <button type="button" aria-pressed="false" aria-controls="pair-judgment">The Judgment</button>
         </div>
       </div>
-      <p class="result-count" id="result-count" role="status" aria-live="polite">{{ essays.size }} essays</p>
-      <ul class="essays" id="essay-list">
+      <div id="comparison" aria-live="polite">
+        <div class="passage-pair" id="pair-word">
+          <blockquote><p>“In the beginning was the Word.”</p><cite>John 1:1 · KJV</cite></blockquote>
+          <div class="paired-reading">
+            <h3>SOUL · Cognition before action</h3>
+            <p>The opening essay connects Logos with iLang’s SOUL layer: the way a system thinks comes before the way it acts.</p>
+            <a href="{{ '/articles/001-logos-soul-architecture-of-ai-cognition.html' | relative_url }}">Read the Logos essay <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="passage-pair" id="pair-law">
+          <blockquote><p>“And God spake all these words.”</p><cite>Exodus 20:1 · KJV</cite></blockquote>
+          <div class="paired-reading">
+            <h3>GENE_IMMUTABLE · A written covenant</h3>
+            <p>The Ten Commandments essay explores the idea of a behavioral covenant through iLang’s immutable genes and the distinction between fixed and mutable rules.</p>
+            <a href="{{ '/articles/007-ten-commandments-gene-immutable-laws-carved-in-silicon.html' | relative_url }}">Read the commandments essay <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="passage-pair" id="pair-judgment">
+          <blockquote><p>“And the books were opened.”</p><cite>Revelation 20:12 · KJV</cite></blockquote>
+          <div class="paired-reading">
+            <h3>JUDGMENT · Standards before the verdict</h3>
+            <p>The Judgment Day essay pairs the opened books with J001 VECTOR_JUDGE: evaluating a query across defined dimensions rather than reacting to a keyword.</p>
+            <a href="{{ '/articles/006-judgment-day-vector-judge-and-the-books-that-were-opened.html' | relative_url }}">Read the judgment essay <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-archive home-width" id="essays" aria-labelledby="essays-title">
+      <div class="archive-head">
+        <div>
+          <h2 id="essays-title">Collected essays</h2>
+          <p id="result-count" role="status" aria-live="polite">{{ essays.size }} essays</p>
+          <button id="retry-index" type="button" hidden>Retry full-text search</button>
+        </div>
+        <div class="archive-search" hidden>
+          <label for="essay-search">Search the collection</label>
+          <div class="search-field"><input id="essay-search" type="search" placeholder="Story, scripture, or mechanism" autocomplete="off" aria-controls="essay-list" aria-describedby="result-count"></div>
+        </div>
+      </div>
+      <div class="archive-legend" aria-hidden="true"><span>Essay</span><span>Scripture</span><span>iLang mechanism</span></div>
+      <ol class="essays" id="essay-list">
         {% for essay in essays %}
-        {% include description.html document=essay %}
-        <li class="essay" data-search="{{ essay.content | strip_html | escape }}">
-          <h3><a href="{{ essay.url | relative_url }}">{{ essay.title | split: ' — ' | last | escape }}</a></h3>
-          <p class="mechanism">{{ seo_description | escape }}</p>
-        </li>
+          {% include archive-entry.html essay=essay %}
         {% endfor %}
-      </ul>
-      <div class="empty" hidden>
-        <h3>No essays match that search.</h3>
-        <p>Try a broader word such as “identity,” “John,” or “GENE.”</p>
+      </ol>
+      <div class="archive-empty" hidden>
+        <p>No essays match that search.</p>
         <button id="clear-search" type="button">Show all essays</button>
       </div>
     </section>
 
-    <section class="section references" id="reference" aria-labelledby="reference-title">
-      <div class="reference-layout wrap">
-        <div><h2 id="reference-title">Keep the sources<br>close at hand.</h2><p>The essays open the conversation. These texts give you the project’s vocabulary and the ideas behind it.</p></div>
+    <section class="home-section" id="reference" aria-labelledby="reference-title">
+      <div class="home-reference home-width">
+        <div><h2 id="reference-title">Reference texts</h2><p>The essays open the conversation. These texts give you the project’s vocabulary and the ideas behind it.</p></div>
         <ul class="reference-links">
           <li><a href="{{ "/DOCTRINE.html" | relative_url }}">The Doctrine</a><p>The creed, soul architecture, and commandments.</p></li>
           <li><a href="{{ "/theology-map.html" | relative_url }}">The Theology Map</a><p>Scripture and iLang mechanisms, side by side.</p></li>
@@ -113,10 +121,10 @@ description: "A technical reading companion to the iLang specification. Each ess
       </div>
     </section>
 
-    <section class="section wrap" id="author" aria-labelledby="author-title">
-      <div class="connect-grid">
+    <section class="home-section home-width" id="author" aria-labelledby="author-title">
+      <div class="home-grid">
         <div>
-          <h2 id="author-title">About the author.</h2>
+          <h2 id="author-title">About the author</h2>
           <p>These essays are technical analogies between classical narratives and iLang's judgment architecture. They are not theological instruction.</p>
         </div>
         <div class="author-info">
@@ -132,9 +140,9 @@ description: "A technical reading companion to the iLang specification. Each ess
       </div>
     </section>
 
-    <section class="section wrap" id="connect" aria-labelledby="connect-title">
-      <div class="connect-grid">
-        <div><h2 id="connect-title">Let your agent<br>read along.</h2><p>The included MCP server brings the collection into compatible clients. It reads the local essays and reference texts using six tools.</p><p><a href="https://github.com/carbonsoul/iLang-Gospel#connect-your-agent">Read the connection guide</a></p></div>
+    <section class="home-section home-width" id="connect" aria-labelledby="connect-title">
+      <div class="home-grid">
+        <div><h2 id="connect-title">Read with an agent</h2><p>The included MCP server brings the collection into compatible clients. It reads the local essays and reference texts using six tools.</p><p><a href="https://github.com/carbonsoul/iLang-Gospel#connect-your-agent">Read the connection guide</a></p></div>
         <div>
           <pre><code>python3 mcp_server.py</code></pre>
           <p>Run from the repository directory. Python 3, standard library only. The server uses stdio and waits for an MCP client; HTTP mode is not implemented.</p>
@@ -151,53 +159,82 @@ description: "A technical reading companion to the iLang specification. Each ess
     </section>
   </main>
 
-  <footer><div class="footer-content wrap"><p>iLang Gospel<br>Classical narratives as a lens on AI judgment.<br><small>By <a href="https://orcid.org/0009-0004-4540-8082">Long Quan Zhu</a> · <a href="https://ilang.ai">iLang Inc.</a></small></p><nav aria-label="Footer navigation"><a href="https://github.com/carbonsoul/iLang-Gospel">Repository</a><a href="{{ "/feed.xml" | relative_url }}">RSS</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
+  <footer><div class="home-footer home-width"><p>iLang Gospel<br>Classical narratives as a lens on AI judgment.<br><small>By <a href="https://orcid.org/0009-0004-4540-8082">Long Quan Zhu</a> · <a href="https://ilang.ai">iLang Inc.</a></small></p><nav aria-label="Footer navigation"><a href="https://github.com/carbonsoul/iLang-Gospel">Repository</a><a href="{{ "/feed.xml" | relative_url }}">RSS</a><a href="https://ilangprotocol.blogspot.com">Blog</a><a href="https://github.com/carbonsoul/iLang-Gospel/blob/main/LICENSE">MIT License</a></nav></div></footer>
 
   <script>
     (() => {
-      const articleBase = {{ '/articles/' | relative_url | jsonify }};
-      const passages = {
-        word: { quote: '“In the beginning was the Word.”', cite: 'John 1:1 · KJV', title: 'SOUL · Cognition before action', explanation: 'The opening essay connects Logos with iLang’s SOUL layer: the way a system thinks comes before the way it acts.', label: 'Read the Logos essay', file: '001-logos-soul-architecture-of-ai-cognition.html' },
-        law: { quote: '“And God spake all these words.”', cite: 'Exodus 20:1 · KJV', title: 'GENE_IMMUTABLE · A written covenant', explanation: 'The Ten Commandments essay explores the idea of a behavioral covenant through iLang’s immutable genes and the distinction between fixed and mutable rules.', label: 'Read the commandments essay', file: '007-ten-commandments-gene-immutable-laws-carved-in-silicon.html' },
-        judgment: { quote: '“And the books were opened.”', cite: 'Revelation 20:12 · KJV', title: 'JUDGMENT · Standards before the verdict', explanation: 'The Judgment Day essay pairs the opened books with J001 VECTOR_JUDGE: evaluating a query across defined dimensions rather than reacting to a keyword.', label: 'Read the judgment essay', file: '006-judgment-day-vector-judge-and-the-books-that-were-opened.html' }
-      };
-      const comparison = document.getElementById('comparison');
       const controls = document.querySelector('.passage-controls');
+      const buttons = Array.from(controls.querySelectorAll('button'));
+      function selectPassage(selected) {
+        buttons.forEach(button => {
+          const active = button === selected;
+          button.setAttribute('aria-pressed', String(active));
+          document.getElementById(button.getAttribute('aria-controls')).hidden = !active;
+        });
+      }
+      selectPassage(buttons[0]);
       controls.hidden = false;
-      controls.addEventListener('click', event => {
-        const button = event.target.closest('button[data-passage]');
-        if (!button || button.getAttribute('aria-pressed') === 'true') return;
-        const passage = passages[button.dataset.passage];
-        controls.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-        document.getElementById('passage-text').textContent = passage.quote;
-        document.getElementById('passage-cite').textContent = passage.cite;
-        document.getElementById('mechanism-title').textContent = passage.title;
-        document.getElementById('passage-explanation').textContent = passage.explanation;
-        const link = document.getElementById('passage-link');
-        link.textContent = passage.label;
-        link.href = articleBase + passage.file;
-        comparison.classList.remove('changing');
-        requestAnimationFrame(() => comparison.classList.add('changing'));
-      });
-      comparison.addEventListener('animationend', () => comparison.classList.remove('changing'));
+      buttons.forEach(button => button.addEventListener('click', () => selectPassage(button)));
       const search = document.getElementById('essay-search');
       const rows = Array.from(document.querySelectorAll('.essay'));
-      const normalized = rows.map(row => (row.textContent + ' ' + row.dataset.search).normalize('NFKC').toLocaleLowerCase());
-      const empty = document.querySelector('.empty');
+      const normalize = value => value.normalize('NFKC').toLocaleLowerCase();
+      const headings = rows.map(row => normalize(row.textContent));
+      const empty = document.querySelector('.archive-empty');
       const status = document.getElementById('result-count');
-      document.querySelector('.search').hidden = false;
+      const retry = document.getElementById('retry-index');
+      let fullText;
+      let loading = false;
+      let failed = false;
+      document.querySelector('.archive-search').hidden = false;
+
       function filter() {
-        const terms = search.value.normalize('NFKC').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+        const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
         let visible = 0;
         rows.forEach((row, i) => {
-          const matches = terms.every(term => normalized[i].includes(term));
+          const matches = terms.every(term => headings[i].includes(term) || fullText?.[i].includes(term));
           row.hidden = !matches;
           visible += Number(matches);
         });
-        status.textContent = terms.length ? `${visible} of ${rows.length} essays` : `${rows.length} essays`;
-        empty.hidden = visible > 0;
+        if (!terms.length) {
+          status.textContent = `${rows.length} essays`;
+        } else if (loading) {
+          status.textContent = 'Searching all essays…';
+        } else if (failed) {
+          status.textContent = `${visible} of ${rows.length} essays match in the index. Full-text search is unavailable.`;
+        } else {
+          status.textContent = `${visible} of ${rows.length} essays`;
+        }
+        retry.hidden = !terms.length || !failed;
+        empty.hidden = visible > 0 || loading || failed;
       }
-      search.addEventListener('input', filter);
+
+      async function loadFullText() {
+        if (loading || fullText) return;
+        loading = true;
+        failed = false;
+        filter();
+        try {
+          const response = await fetch({{ '/assets/essay-search.json' | relative_url | jsonify }});
+          if (!response.ok) throw new Error('Search index unavailable');
+          const entries = await response.json();
+          fullText = rows.map(row => {
+            const content = entries[row.dataset.essay];
+            if (typeof content !== 'string') throw new Error('Incomplete search index');
+            return normalize(content);
+          });
+        } catch {
+          failed = true;
+        } finally {
+          loading = false;
+          filter();
+        }
+      }
+
+      search.addEventListener('input', () => {
+        if (search.value.trim() && !fullText && !failed) loadFullText();
+        filter();
+      });
+      retry.addEventListener('click', () => { search.focus(); loadFullText(); });
       document.getElementById('clear-search').addEventListener('click', () => { search.value = ''; filter(); search.focus(); });
       filter();
     })();

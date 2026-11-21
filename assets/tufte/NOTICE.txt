@@ -1,0 +1,19 @@
+Third-party assets shipped with iLang Gospel
+
+Tufte CSS — MIT
+Source: https://github.com/edwardtufte/tufte-css/tree/b5d7b7bbe5ce9c4c50fcfad4f19ee3646cfd7ae1
+The unmodified upstream tufte.css is retained for reference. The site loads
+site.css and its page styles, which set the reading width, margins and themes.
+The upstream license is reproduced in LICENSE-tufte-css.txt.
+
+ET Book — MIT
+Font binaries taken from the same tufte-css revision, under et-book/.
+roman.woff: et-book-roman-line-figures
+italic.woff: et-book-display-italic-old-style-figures
+bold.woff: et-book-bold-line-figures
+These three WOFF files are byte-identical to the corresponding binaries at:
+https://github.com/edwardtufte/et-book/tree/24d3a3bbfc880095d3df2b9e9d60d05819138e89
+The upstream font license is reproduced in LICENSE-et-book.txt.
+
+Tufte-Jekyll was consulted as a layout reference. No theme files are distributed.
+https://github.com/clayh53/tufte-jekyll

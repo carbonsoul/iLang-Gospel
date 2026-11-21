@@ -1,0 +1,256 @@
+/* A reading measure and a shared margin for the title, source notes and text. */
+.reading {
+  --reader-columns: minmax(0, 42rem) minmax(0, 16rem);
+  --reader-gap: clamp(2rem, 7vw, 7rem);
+  padding-block: clamp(1.5rem, 4vw, 3.25rem) clamp(3rem, 6vw, 7rem);
+  color: var(--ink);
+  font-family: var(--serif);
+}
+.reader-crumb,
+.reader-edition,
+.reader-record,
+.reader-toc,
+.reader-colophon,
+.reader-source,
+.reading-next span { font-family: var(--sans); }
+.reader-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .8em;
+  font-size: .875rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.reader-crumb a { color: inherit; }
+.reader-heading,
+.article-body,
+.reader-citation {
+  display: grid;
+  grid-template-columns: var(--reader-columns);
+  column-gap: var(--reader-gap);
+  align-items: start;
+}
+.reader-heading {
+  margin-block: clamp(2rem, 4.5vw, 4.75rem) clamp(1.8rem, 3.8vw, 3.75rem);
+  padding-bottom: clamp(1.6rem, 3vw, 3rem);
+  border-bottom: 1px solid var(--line);
+}
+.reader-heading h1 {
+  margin: 0;
+  font: 400 clamp(2.65rem, 5.4vw, 5.2rem)/1.03 var(--serif);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.reader-subtitle {
+  display: block;
+  margin-top: .7em;
+  font: italic 400 clamp(1.3rem, 2.2vw, 2rem)/1.22 var(--serif);
+  letter-spacing: -.012em;
+  color: var(--muted);
+}
+.reader-separator {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+.reader-apparatus {
+  align-self: end;
+  padding-top: .8rem;
+  border-top: 1px solid var(--line);
+}
+.reader-edition, .reader-record {
+  margin: 0;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.reader-record { margin-top: .85rem; }
+.reader-apparatus nav { display: block; }
+.reader-edition + nav { margin-top: .75rem; }
+.reader-toc { font-size: .9rem; }
+.reader-toc summary {
+  display: list-item;
+  width: fit-content;
+  padding-block: .35rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+.reader-toc ol {
+  display: grid;
+  gap: .5rem;
+  margin: .6rem 0 .2rem;
+  padding-left: 1.45em;
+  line-height: 1.4;
+}
+.reader-toc li::marker { color: var(--muted); }
+.article-body {
+  font-size: clamp(1.18rem, 1.5vw, 1.4rem);
+  line-height: 1.57;
+  overflow-wrap: break-word;
+}
+.article-body > * {
+  grid-column: 1;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 0 1em;
+}
+.article-body h2, .article-body h3, .article-body h4 {
+  margin: 1.15em 0 .45em;
+  font-family: var(--serif);
+  line-height: 1.14;
+  scroll-margin-top: 1.5rem;
+}
+.article-body h2 { font-size: clamp(1.75rem, 3.1vw, 2.65rem); font-weight: 400; }
+.article-body h3 { font-size: 1.45em; font-style: italic; font-weight: 400; }
+.article-body h4 { font-size: 1.1em; }
+.article-body p, .article-body li { max-width: none; }
+.article-body ol, .article-body ul { padding-inline-start: 1.4em; }
+.article-body li + li { margin-top: .35em; }
+.article-body hr {
+  width: 3rem;
+  height: 1px;
+  margin: 1em 0 1.75em;
+  border: 0;
+  background: var(--line);
+}
+.article-body > hr:first-child { display: none; }
+.article-body a, .reader-apparatus a, .reader-colophon a { overflow-wrap: anywhere; }
+.article-body code {
+  font: .8em/1.5 var(--mono);
+  overflow-wrap: anywhere;
+}
+.article-body pre {
+  max-width: 100%;
+  padding: 1em 1.1em;
+  margin-inline: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  font: .8em/1.6 var(--mono);
+  background: var(--wash);
+  border-inline-start: 2px solid var(--line);
+  color: var(--ink);
+  white-space: pre;
+  overflow-wrap: normal;
+  tab-size: 4;
+}
+.article-body pre code { font: inherit; overflow-wrap: inherit; }
+.article-body .highlight { max-width: 100%; margin-block: 0; }
+.article-body table {
+  display: block;
+  width: fit-content;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: .9em;
+}
+.article-body th, .article-body td {
+  padding: .45em .7em;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.article-body img { max-width: 100%; height: auto; }
+.article-body blockquote {
+  margin: .4em 0 1.4em;
+  padding-inline-start: 1.15em;
+  border-inline-start: 1px solid var(--line);
+}
+.article-body blockquote p { margin: 0; }
+.article-body blockquote p + p { margin-top: .8em; }
+.article-body .reader-citation {
+  grid-column: 1 / -1;
+  margin: .6em 0 1.5em;
+}
+.reader-citation > blockquote { margin: 0; }
+.article-body .reader-epigraph {
+  font-size: 1.19em;
+  font-style: italic;
+  line-height: 1.43;
+  color: var(--ink);
+}
+.article-body > p.reader-epigraph {
+  padding-left: 1.15em;
+  border-left: 1px solid var(--line);
+}
+.article-body .reader-epigraph :is(i, em) { font-style: italic; }
+.reader-source {
+  display: flex;
+  gap: .7em;
+  align-items: baseline;
+  padding-top: .5em;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.reader-source sup,
+.reader-mark, .reader-note-toggle {
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--accent);
+}
+.reader-source sup { font-size: .75rem; }
+.reader-mark { font-size: .7rem; margin-left: .3em; vertical-align: super; line-height: 0; }
+.reader-note-toggle { display: none; }
+.reader-colophon, .reading-next {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+.reader-colophon { max-width: 42rem; font-size: .9rem; color: var(--muted); }
+.reader-colophon p { margin: 0 0 .35em; }
+.reading-next { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.reading-next a { display: block; max-width: 32ch; font-size: 1.25rem; line-height: 1.3; }
+.reading-next a[rel="next"] { grid-column: 2; justify-self: end; }
+.reading-next span { display: block; margin-bottom: .55rem; font-size: .875rem; color: var(--muted); }
+.reading:lang(zh), .reading:lang(zh) h1 {
+  font-family: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+}
+.article-body .reader-document {
+  grid-column: 1 / -1;
+  width: fit-content;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, Consolas, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", monospace;
+}
+@media (max-width: 49.99rem) {
+  .reading { --reader-columns: minmax(0, 1fr); }
+  .reader-heading { row-gap: 1.4rem; }
+  .reader-apparatus { border: 0; padding: 0; }
+  .reader-source {
+    display: none;
+    margin: .65em 0 0 1.5em;
+    padding-block: .55em;
+    max-width: 26rem;
+  }
+  .reader-source.is-open { display: flex; }
+  .reader-mark { display: none; }
+  .reader-note-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: super;
+    min-width: 1.55rem;
+    min-height: 1.55rem;
+    margin-inline-start: .15rem;
+    padding: 0 .25rem;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-size: .75rem;
+    line-height: 1;
+    background: var(--paper);
+    cursor: pointer;
+  }
+  .reader-note-toggle[aria-expanded="true"] { border-color: var(--accent); }
+}
+@media (max-width: 36rem) {
+  .reading-next { grid-template-columns: minmax(0, 1fr); }
+  .reading-next a[rel="next"] { grid-column: 1; justify-self: start; }
+}
