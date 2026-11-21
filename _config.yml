@@ -17,6 +17,14 @@ optional_front_matter:
 
 defaults:
   - scope:
+      path: "personas"
+    values:
+      layout: reference
+  - scope:
+      path: "personas/ILANG-BREAKER-v1.0.md"
+    values:
+      title: "iLang Breaker"
+  - scope:
       path: "articles"
     values:
       layout: article

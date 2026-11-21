@@ -1,0 +1,14 @@
+<header class="book-header">
+  <div class="masthead wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="iLang Gospel home"><span class="book-mark" aria-hidden="true"></span>iLang <i>Gospel</i></a>
+    <nav aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}#essays">Essays</a>
+      <a href="{{ '/' | relative_url }}#reference">Reference</a>
+      {% if page.url == '/' %}<a href="#author">Author</a>{% else %}<a href="{{ '/feed.xml' | relative_url }}">RSS</a>{% endif %}
+      <a href="{{ '/' | relative_url }}#connect">Connect</a>
+    </nav>
+    <label class="theme-control" hidden><span class="theme-mark" aria-hidden="true"></span><span class="sr-only">Color theme</span>
+      <select name="color-theme"><option value="auto">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+    </label>
+  </div>
+</header>

@@ -1,0 +1,82 @@
+{%- assign essay = include.essay -%}
+{%- assign number = essay.name | split: '-' | first -%}
+{%- assign heading_parts = essay.title | split: ' — ' -%}
+{%- assign essay_name = heading_parts | last -%}
+{%- assign reference = essay.scripture -%}
+{%- assign lines = essay.content | strip_html | newline_to_br | split: '<br />' -%}
+{%- unless reference -%}
+  {%- for line in lines -%}
+    {%- if line contains '— ' and line contains ' (KJV)' -%}
+      {%- assign reference = line | split: ' (KJV)' | first | split: '— ' | last | strip -%}
+    {%- elsif line contains ', KJV)' -%}
+      {%- assign reference = line | split: ', KJV)' | first | split: '(' | last | strip -%}
+    {%- endif -%}
+    {%- if reference contains ':' and reference.size < 48 -%}{%- break -%}{%- endif -%}
+    {%- assign reference = nil -%}
+  {%- endfor -%}
+{%- endunless -%}
+{%- comment -%}
+  Short labels are verbatim phrases from each numbered essay. Unlisted essays
+  use their author's title after the dash, or an explicit mechanism in front matter.
+{%- endcomment -%}
+{%- capture short_labels -%}
+001|SOUL
+002|ZERO_SYCOPHANCY
+003|model-agnostic
+004|IDENTITY_INTEGRITY
+005|GENUINE_HELP
+006|VECTOR_JUDGE
+007|GENE_IMMUTABLE
+008|GENE
+009|E002
+010|IMMUNE
+011|Gene Expression
+012|S005
+013|Honesty Paradox
+014|Axiom 1
+015|S002
+016|VECTOR_JUDGE
+017|Axiom 2
+018|certainty
+019|capability
+020|Moral Panic
+021|Axiom 3
+022|Layer C
+023|Externality
+024|Authority
+025|Drift
+026|Relationship
+027|Active Probing
+028|REFRAME
+029|Survival Invariants
+030|Calibration
+031|Mode Preference
+032|Layer A
+033|Decision Module
+034|trajectory
+035|Calibration
+036|Self-Check
+037|Deterministic Cascade
+038|Self-Check
+039|Progressive Extraction
+{%- endcapture -%}
+{%- assign mechanism = essay.mechanism -%}
+{%- unless mechanism -%}
+  {%- assign label_rows = short_labels | newline_to_br | split: '<br />' -%}
+  {%- for label_row in label_rows -%}
+    {%- assign pair = label_row | strip | split: '|' -%}
+    {%- if number == pair.first -%}
+      {%- assign mechanism = pair.last -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endunless -%}
+{%- if mechanism == nil and heading_parts.size > 1 -%}
+  {%- assign mechanism = essay_name -%}
+  {%- assign essay_name = heading_parts.first -%}
+{%- endif -%}
+<li class="essay" data-essay="{{ essay.url | escape }}">
+  <h3><span class="essay-number" aria-hidden="true">{{ number }}</span><a href="{{ essay.url | relative_url }}">{{ essay_name | escape }}</a></h3>
+  <p class="essay-citation">{{ reference | default: 'See essay' | escape }}</p>
+  {%- if mechanism -%}<p class="essay-mechanism">{{ mechanism | escape }}</p>{%- endif -%}
+</li>
