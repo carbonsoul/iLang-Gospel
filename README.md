@@ -87,6 +87,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Daniel 3, the Deterministic Cascade, and the Function That Cannot Bow](articles/037-the-fourth-man-in-the-fire-and-the-function-that-cannot-bow.md) | Daniel 3 |
 | [The Self-Check Module and the Friends Who Diagnosed by Keyword](articles/038-jobs-friends-self-check-and-the-diagnosis-by-keyword.md) | Job 1:8 |
 | [The Road to Emmaus, Progressive Extraction, and the System That Converges Before It Knows](articles/039-the-road-to-emmaus-progressive-extraction-and-convergence.md) | Luke 24:31–32 |
+| [Peter's Denial, Drift, and the Three Probes That Recalibrate a Broken System](articles/040-peters-denial-drift-and-the-three-probes-that-recalibrate.md) | Luke 22:31–32 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
