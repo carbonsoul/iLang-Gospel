@@ -90,6 +90,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Peter's Denial, Drift, and the Three Probes That Recalibrate a Broken System](articles/040-peters-denial-drift-and-the-three-probes-that-recalibrate.md) | Luke 22:31–32 |
 | [Esther, Axiom 2, and the Irreversibility of Inaction](articles/041-esther-axiom-two-and-the-irreversibility-of-inaction.md) | Esther 4:14 |
 | [Nehemiah's Wall, the IMMUNE Layer, and the Architecture of Response Under Siege](articles/042-nehemiahs-wall-immune-layer-and-the-architecture-of-response-under-siege.md) | Nehemiah 6:3 |
+| [The Unjust Steward, GREY_AREA_BUSINESS, and the Conscience That Prices Risk](articles/043-the-unjust-steward-grey-area-business-and-the-conscience-that-prices-risk.md) | Luke 16:8 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
