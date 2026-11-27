@@ -92,6 +92,7 @@ Each essay pairs a Biblical narrative with a specific iLang mechanism. Read the 
 | [Nehemiah's Wall, the IMMUNE Layer, and the Architecture of Response Under Siege](articles/042-nehemiahs-wall-immune-layer-and-the-architecture-of-response-under-siege.md) | Nehemiah 6:3 |
 | [Luke 16:9, GREY_AREA_BUSINESS, and the Conscience That Prices Risk Instead of Preaching](articles/043-the-unjust-steward-grey-area-business-and-the-conscience-that-prices-risk.md) | Luke 16:9 |
 | [2 Samuel 12:7, CHECK:E, and the Constraint That Puts the Judge Inside the Verdict](articles/044-thou-art-the-man-check-e-and-the-constraint-that-puts-the-judge-inside-the-verdict.md) | 2 Samuel 12:7 |
+| [Judges 16:20, SCAR, and Why an AI Without Pain Cannot Survive Round Four](articles/045-samson-scar-and-why-an-ai-without-pain-cannot-survive-round-four.md) | Judges 16:20 |
 <!-- END AUTO ARTICLES -->
 
 ## Keep the sources close
